@@ -37,21 +37,21 @@ mac () {
 
 # gitv=$(git --version | grep "git version")
 
-if [[ $(git --version) ]]; then
-	return sh -c "curl -fsSL https://raw.githubusercontent.com/CarlosMed/dotfiles/master/scripts/install.sh"
-else
-	"Not working"
-fi
-
-# read -p "${green}What OS are you on: (ie mac, linux, windows) ${red}" os
-
-# if [[ $os == "mac" ]]; then
-# 	clear
-# 	mac
-
-# elif [[ $os == "arch" ]]; then
-# 	$os
+# if [[ $(git --version) ]]; then
+# 	return mac
 # else
-# 	echo "Please try again!"
+# 	"Not working"
 # fi
+
+read -p "${green}What OS are you on: (ie mac, linux, windows) ${red}" os
+
+if [[ $os == "mac" ]]; then
+	clear
+	mac
+
+elif [[ $os == "arch" ]]; then
+	$os
+else
+	echo "Please try again!"
+fi
 
