@@ -1,14 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-blink=$(tput blink)
-normal=$(tput sgr0)
-green=$(tput setaf 150)
-red=$(tput setaf 1)
-blue=$(tput setaf 4)
-
-clear
-
-# INstallation Functions
+# Installation Functions
 mac () {
 	printf $red
 	echo "*******************************"
@@ -34,24 +26,3 @@ mac () {
 
 	brew install git mongodb neofetch openssl dpkg wget
 }
-
-# gitv=$(git --version | grep "git version")
-
-# if [[ $(git --version) ]]; then
-# 	return mac
-# else
-# 	"Not working"
-# fi
-
-read -p "${green}What OS are you on: (ie mac, linux, windows) ${red}" os
-
-if [[ $os == "mac" ]]; then
-	clear
-	mac
-
-elif [[ $os == "arch" ]]; then
-	$os
-else
-	echo "Please try again!"
-fi
-
