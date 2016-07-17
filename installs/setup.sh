@@ -9,6 +9,8 @@ blue=$(tput setaf 4)
 
 clear
 
+
+
 read -p "${green}What OS are you on: (ie mac, linux, windows) ${red}" os
 
 if [[ $os == "mac" ]]; then

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Installation Functions
 mac () {
@@ -24,5 +24,5 @@ mac () {
 	echo "###      Packages     ###"
 	echo "#########################"
 
-	brew install git mongodb neofetch openssl dpkg wget
+	brew install git mongodb neofetch openssl dpkg
 }
