@@ -1,6 +1,6 @@
 #!/bin/sh
-source https://raw.githubusercontent.com/CarlosMed/dotfiles/master/installs/mac.sh
-source https://raw.githubusercontent.com/CarlosMed/dotfiles/master/installs/arch.sh
+source mac.sh
+source arch.sh
 
 blink=$(tput blink)
 normal=$(tput sgr0)
