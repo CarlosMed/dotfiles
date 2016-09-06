@@ -1,8 +1,6 @@
 #!/bin/bash
-#. ~/dotfiles/installs/mac.sh
-#. ~/dotfiles/installs/arch.sh
-
-source https://raw.githubusercontent.com/CarlosMed/dotfiles/master/installs/mac.sh
+. ~/dotfiles/installs/mac.sh
+. ~/dotfiles/installs/arch.sh
 
 blink=$(tput blink)
 normal=$(tput sgr0)
@@ -13,15 +11,15 @@ blue=$(tput setaf 4)
 clear
 
 # git check
-# printf "%s\n" $blue
-# echo "#########################"
-# echo "###    Checking Git   ###"
-# echo "#########################"
+printf "%s\n" $blue
+echo "#########################"
+echo "###    Checking Git   ###"
+echo "#########################"
 
-# if [[ $(git --version) ]]; then
-# 	echo "Git already installed"
-# 	git clone https://github.com/carlosmed/dotfiles.git
-# fi
+if [[ $(git --version) ]]; then
+	echo "Git already installed"
+	git clone https://github.com/carlosmed/dotfiles.git
+fi
 
 clear
 
