@@ -1,5 +1,5 @@
 # WIMILI
-WIMILI is a Windows, Mac, and Linux Installation for when i do a
+WIMILI is a ~~Windows~~, Mac, and Linux Installation for when i do a
 clean install.
 
 ## Installing WIMILI
