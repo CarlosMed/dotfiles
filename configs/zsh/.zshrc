@@ -84,3 +84,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias xup="xrdb ~/.Xresources"
+alias pacman="_ pacman"
+alias reboot="_ reboot"
