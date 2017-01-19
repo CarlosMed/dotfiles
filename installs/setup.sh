@@ -18,12 +18,12 @@ echo "#########################"
 
 if [[ $(git --version) ]]; then
 	echo "Git already installed"
-	git clone https://github.com/carlosmed/dotfiles.git
+	# git clone https://github.com/carlosmed/dotfiles.git
 fi
 
 clear
 
-read -p "${green}What OS are you on: (ie mac, linux, windows) ${red}" os
+read -p "${green}What OS are you on: (ie mac, arch, windows) ${red}" os
 
 if [[ $os == "mac" ]]; then
 	clear

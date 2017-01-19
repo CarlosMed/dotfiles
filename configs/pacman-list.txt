@@ -1,0 +1,12 @@
+ttf-dejavu
+
+git 
+ openssh
+
+firefox
+zsh
+xclip
+vim
+rxvt-unicode
+feh
+adobe-source-code-pro-fonts
