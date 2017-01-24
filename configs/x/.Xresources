@@ -45,7 +45,7 @@ URxvt.internalBorder:	15
 *.cursorUnderline:	true
 *.cursorBlink:		true
 *.internalBorder: 	15
-*.dynamicColors:	on
+! *.dynamicColors:	on
 *.letterSpace:		0
 
 ! Xft Option
