@@ -12,3 +12,5 @@ feh
 adobe-source-code-pro-fonts
 stow
 tree
+unzip
+unzip

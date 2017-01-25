@@ -53,7 +53,7 @@ ZSH_THEME="geometry/geometry"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git sublime)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -85,7 +85,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zshi"
-alias zshup="source ~/.zshrc"
+alias zup="source ~/.zshrc"
 alias xup="xrdb ~/.Xresources"
 alias pacman="_ pacman"
 alias reboot="_ reboot"
+alias shutdown="_ shutdown"
