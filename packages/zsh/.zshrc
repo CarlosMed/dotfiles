@@ -85,6 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zshi"
+alias stx="startx"
 alias zup="source ~/.zshrc"
 alias xup="xrdb ~/.Xresources"
 alias pacman="_ pacman"

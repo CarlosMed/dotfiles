@@ -1,6 +1,6 @@
 #!/bin/bash
-. ~/dotfiles/installs/mac.sh
-. ~/dotfiles/installs/arch.sh
+. ~/dotfiles/os/mac.sh
+. ~/dotfiles/os/arch.sh
 
 blink=$(tput blink)
 normal=$(tput sgr0)
