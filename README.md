@@ -1,3 +1,5 @@
+
+
 # WIMILI
 WIMILI is a ~~Windows~~, Mac, and Linux Installation for when i do a
 clean install.
@@ -22,3 +24,10 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/CarlosMed/dotfiles/master/
   - [x] [neofetch](http://brewformulas.org/Neofetch)
   - [x] [openssl](http://brewformulas.org/Openssl)
   - [x] [dpkg](http://brewformulas.org/Dpkg)
+
+## Using GNU Stow
+  1. Install stow if not installed
+  1. Navigate to pacakages/[selected package]
+  1. run `stow [package folder] -t [location]`
+      - The `-t` is used for the target location in which to create the symlink
+      - For help and options run `man stow`
