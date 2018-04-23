@@ -57,6 +57,10 @@ plugins=(git sublime)
 
 source $ZSH/oh-my-zsh.sh
 
+# ZSH Syntax Highlighting & Autosuggestion
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
