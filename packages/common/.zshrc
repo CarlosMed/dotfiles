@@ -53,7 +53,7 @@ ZSH_THEME="geometry/geometry"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git sublime)
+plugins=(git yarn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -95,4 +95,15 @@ alias xup="xrdb ~/.Xresources"
 alias pacman="_ pacman"
 alias reboot="_ reboot"
 alias shutdown="_ shutdown"
+alias c="code ."
+alias ys="yarn start"
 export PATH="/usr/local/sbin:$PATH"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/carlos.medina/.npm/_npx/63136/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/carlos.medina/.npm/_npx/63136/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/carlos.medina/.npm/_npx/63136/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/carlos.medina/.npm/_npx/63136/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
