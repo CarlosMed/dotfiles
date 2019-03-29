@@ -97,8 +97,14 @@ alias reboot="_ reboot"
 alias shutdown="_ shutdown"
 alias c="code ."
 alias ys="yarn start"
+alias ya="yarn add"
+alias tm="tmux"
+alias tma="tmux a"
+alias tmns="tmux new-session -s"
+alias tmas="tmux attach-session -t"
+alias tmks="tmux kill-session -t"
+alias tmls="tmux ls"
 export PATH="/usr/local/sbin:$PATH"
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # tabtab source for serverless package
