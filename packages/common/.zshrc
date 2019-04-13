@@ -10,6 +10,12 @@ export ZSH=~/.oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="geometry/geometry"
+# ZSH_THEME="spaceship/spaceship"
+
+# Geometry plugins
+GEOMETRY_PROMPT_PLUGINS=(node git +exec_time)
+GEOMETRY_COLOR_PACKAGER_VERSION="black"
+GEOMETRY_SYMBOL_PACKAGER_VERSION="⬡"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -53,13 +59,9 @@ ZSH_THEME="geometry/geometry"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git yarn)
+plugins=(git yarn tmux z)
 
 source $ZSH/oh-my-zsh.sh
-
-# ZSH Syntax Highlighting & Autosuggestion
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
 
@@ -89,21 +91,20 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zshi"
+alias c="code ."
 alias stx="startx"
-alias zup="source ~/.zshrc"
-alias xup="xrdb ~/.Xresources"
 alias pacman="_ pacman"
 alias reboot="_ reboot"
+alias trash="npx trash-cli"
 alias shutdown="_ shutdown"
-alias c="code ."
-alias ys="yarn start"
-alias ya="yarn add"
-alias tm="tmux"
-alias tma="tmux a"
-alias tmns="tmux new-session -s"
-alias tmas="tmux attach-session -t"
-alias tmks="tmux kill-session -t"
-alias tmls="tmux ls"
+alias zup="source ~/.zshrc"
+alias xup="xrdb ~/.Xresources"
+
+# ZSH Syntax Highlighting & Autosuggestion
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+#Exports
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 

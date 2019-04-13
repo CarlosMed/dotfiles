@@ -1,0 +1,3 @@
+[submodule "packages/common/.oh-my-zsh/custom/themes/geometry"]
+	path = packages/common/.oh-my-zsh/custom/themes/geometry
+	url = https://github.com/geometry-zsh/geometry
