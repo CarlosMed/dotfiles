@@ -13,7 +13,7 @@ ZSH_THEME="geometry/geometry"
 # ZSH_THEME="spaceship/spaceship"
 
 # Geometry plugins
-GEOMETRY_PROMPT_PLUGINS=(node git +exec_time)
+GEOMETRY_PROMPT_PLUGINS=(exec_time node git)
 GEOMETRY_COLOR_PACKAGER_VERSION="black"
 GEOMETRY_SYMBOL_PACKAGER_VERSION="⬡"
 
