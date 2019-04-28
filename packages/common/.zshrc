@@ -92,7 +92,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zshi"
-alias c.="code"
+alias c="code"
 alias stx="startx"
 alias pacman="_ pacman"
 alias reboot="_ reboot"
