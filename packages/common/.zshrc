@@ -100,6 +100,7 @@ alias huh="alias | grep"
 alias trash="npx trash-cli"
 alias shutdown="_ shutdown"
 alias zup="source ~/.zshrc"
+alias tup="tmux source-file ~/.tmux.conf"
 alias xup="xrdb ~/.Xresources"
 
 # ZSH Syntax Highlighting & Autosuggestion
