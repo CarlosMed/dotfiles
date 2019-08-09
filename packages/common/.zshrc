@@ -102,7 +102,7 @@ alias shutdown="_ shutdown"
 alias zup="source ~/.zshrc"
 alias tup="tmux source-file ~/.tmux.conf"
 alias xup="xrdb ~/.Xresources"
-alias v=vim
+alias v="vim"
 
 # ZSH Syntax Highlighting & Autosuggestion
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
