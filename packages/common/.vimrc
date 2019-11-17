@@ -35,7 +35,8 @@ set wildmenu
 
 " Enables syntax highlighting and colorsceme
 syntax on
-colo tomorrow-night
+colo gruvbox/colors/gruvbox
+set termguicolors
 
 :autocmd InsertEnter * set cul
 :autocmd InsertLeave * set nocul
