@@ -1,3 +1,17 @@
+" Automatic Plugin Instalation for Vim-Plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged')
+
+Plug 'wincent/terminus'
+
+call plug#end()
+
 " Automatic reload of .vimrc
 autocmd! bufwritepost .vimrc source %
 
