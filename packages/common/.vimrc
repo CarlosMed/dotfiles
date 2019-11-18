@@ -19,13 +19,15 @@ set relativenumber
 set cursorline
 
 " Sets tabbing
+set smarttab
+set cindent
 set autoindent
-set textwidth =80
+set textwidth=80
 set expandtab
 
-" set tabstop =4
-set softtabstop =2
-set shiftwidth =2
+" set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 " Sets current path to vim path
 set path+=**
