@@ -1,3 +1,6 @@
 [submodule "packages/common/.oh-my-zsh/custom/themes/geometry"]
 	path = packages/common/.oh-my-zsh/custom/themes/geometry
 	url = https://github.com/geometry-zsh/geometry
+[submodule "packages/common/.vim/colors/gruvbox"]
+	path = packages/common/.vim/colors/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
