@@ -4,3 +4,9 @@
 [submodule "packages/common/.vim/colors/gruvbox"]
 	path = packages/common/.vim/colors/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
+[submodule "packages/common/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+	path = packages/common/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "packages/common/.oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+	path = packages/common/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
