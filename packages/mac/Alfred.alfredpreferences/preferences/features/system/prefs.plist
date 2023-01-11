@@ -4,6 +4,8 @@
 <dict>
 	<key>ejectKeywordEnabled</key>
 	<true/>
+	<key>ejectallKeywordEnabled</key>
+	<true/>
 	<key>emptytrashKeyword</key>
 	<string>etrash</string>
 	<key>screensaverKeyword</key>
@@ -12,5 +14,11 @@
 	<string>shut</string>
 	<key>sleepKeyword</key>
 	<string>zzz</string>
+	<key>volumedownKeywordEnabled</key>
+	<false/>
+	<key>volumemuteKeywordEnabled</key>
+	<false/>
+	<key>volumeupKeywordEnabled</key>
+	<false/>
 </dict>
 </plist>

@@ -10,5 +10,7 @@
 	<true/>
 	<key>showOnScreen</key>
 	<integer>1</integer>
+	<key>visibleresults</key>
+	<integer>4</integer>
 </dict>
 </plist>

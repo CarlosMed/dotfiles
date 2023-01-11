@@ -2,7 +2,7 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>showContacts</key>
-	<false/>
+	<key>lightthemeuid</key>
+	<string>theme.fileimport.6D107252-7845-4707-9E90-FA377A7102B4</string>
 </dict>
 </plist>

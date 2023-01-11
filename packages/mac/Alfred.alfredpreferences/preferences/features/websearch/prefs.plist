@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>C36AA11F-AD7C-4100-905E-236867CC9555</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>bang</string>
+			<key>spaces</key>
+			<string>+</string>
+			<key>text</key>
+			<string>Duck Duck Go Bangs</string>
+			<key>url</key>
+			<string>https://duckduckgo.com/bangs?q={query}</string>
+		</dict>
+	</dict>
+</dict>
+</plist>
