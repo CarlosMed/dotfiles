@@ -2562,7 +2562,7 @@
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
-			<false/>
+			<true/>
 			<key>Use Tab Color</key>
 			<true/>
 			<key>Use Underline Color</key>
