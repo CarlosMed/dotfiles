@@ -1,3 +1,4 @@
+# zmodload zsh/zprof        # Used to measure ZSH performance
 user="$(whoami)"
 
 # If you come from bash you might have to change your $PATH.
@@ -125,3 +126,4 @@ source ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighti
 
 
 # # .zshrc
+# zprof # ZSH Performance End 
