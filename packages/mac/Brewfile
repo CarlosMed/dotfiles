@@ -1,0 +1,66 @@
+# Taps
+tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
+tap 'homebrew/bundle'
+
+# Bins
+brew 'coreutils'
+brew 'bat' # Better version of "cat" terminal command
+brew 'curl' # Better version of "cat" terminal command
+brew 'ffmpeg' # Audio and Video Converter
+brew 'git'
+brew 'grep'
+brew 'httpie'
+brew 'jq' # command-line JSON processor
+brew 'mackup'
+brew 'mas' # Mac App Store manager
+brew 'pkg-config'
+brew 'stow'
+
+
+# Dev
+brew 'asdf'
+brew 'imagemagick'
+
+# Apps
+cask 'alt-tab'
+cask 'appcleaner'
+cask 'bartender'
+cask 'beardedspice'
+cask 'caffeine'
+cask 'dbngin'
+cask 'docker'
+cask 'fantastical'
+cask 'figma'
+cask 'firefox'
+cask 'google-chrome'
+cask 'imageoptim'
+cask 'insomnia'
+cask 'iterm2'
+cask 'monitorcontrol'
+cask 'private-internet-access'
+cask 'qlmarkdown'
+cask 'quicklook-json'
+cask 'raycast'
+cask 'rectangle'
+cask 'shottr'
+cask 'slack'
+cask 'soundsource'
+cask 'spotify'
+cask 'the-unarchiver'
+cask 'todoist'
+cask 'transmit'
+cask 'visual-studio-code'
+cask 'zoom'
+
+# Fonts
+
+# Mac App Store
+mas 'velja', id: 1607635845
+mas 'tailscale', id: 1475387142
+mas 'sequel-ace', id: 1518036000
+mas 'Keynote', id: 409183694
+mas 'Numbers', id: 409203825
+mas 'pages', id: 409201541
+mas 'xcode', id: 497799835
