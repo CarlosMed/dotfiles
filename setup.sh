@@ -1,6 +1,9 @@
 #!/bin/bash
-. ~/dotfiles/os/mac.sh
-. ~/dotfiles/os/arch.sh
+
+# Setting Variabes of Directories
+home=$HOME
+dot=$home/Code/dotfiles
+packages=$dot/packages
 
 blink=$(tput blink)
 normal=$(tput sgr0)
