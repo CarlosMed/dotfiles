@@ -5,6 +5,9 @@ home=$HOME
 dot=$home/Code/dotfiles
 packages=$dot/packages
 
+. $dot/installs/mac.sh
+# . $home/Code/dotfiles/installs/arch.sh
+
 blink=$(tput blink)
 normal=$(tput sgr0)
 green=$(tput setaf 150)
