@@ -93,18 +93,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zshi"
-alias c="code"
-alias stx="startx"
-alias pacman="_ pacman"
-alias reboot="_ reboot"
-alias huh="alias | grep"
-alias trash="npx trash-cli"
-alias shutdown="_ shutdown"
-# alias zup="source ~/.zshrc"
-alias zup="exec zsh" # View: https://unix.stackexchange.com/questions/532548/how-do-i-apply-the-changes-to-the-zshrc-file-after-editing-it
-alias tup="tmux source-file ~/.tmux.conf"
-alias xup="xrdb ~/.Xresources"
-alias v="vim"
+source $ZSH_CUSTOM/alias.zsh`
 
 #Exports
 export PATH="/usr/local/sbin:$PATH"
