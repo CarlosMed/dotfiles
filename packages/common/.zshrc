@@ -13,7 +13,7 @@ export ZSH=~/.oh-my-zsh
 ZSH_THEME="geometry/geometry"
 # ZSH_THEME="spaceship/spaceship"
 
-# Geometry plugins
+# Geometry Theme Settings
 GEOMETRY_PROMPT_PLUGINS=(exec_time node git)
 GEOMETRY_COLOR_PACKAGER_VERSION="black"
 GEOMETRY_SYMBOL_PACKAGER_VERSION="⬡"
@@ -61,7 +61,7 @@ ZSH_CUSTOM=$HOME/Code/dotfiles/packages/common/.oh-my-zsh/custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git yarn tmux z)
+plugins=(git tmux z asdf)
 
 source $ZSH/oh-my-zsh.sh
 
