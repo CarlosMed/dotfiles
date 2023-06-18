@@ -25,6 +25,22 @@ mac () {
 		echo "Homebrew already installed"
 	fi
 
+	# Installing oh-my-zsh
+	printf "%s\n" $blue
+	echo "#########################"
+	echo "###     Installing    ###"
+	echo "###     oh-my-zsh     ###"
+	echo "#########################"
+
+	printf "%s\n" $green
+	if ! $(test -d "$home/.oh-my-zsh"); then
+		echo "Installing Oh My ZSH"
+		
+		sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	else
+		echo "Oh My ZSH already installed"
+	fi
+
 	printf "%s\n" $blue
 	echo "#########################"
 	echo "###  Installing Brew  ###"
