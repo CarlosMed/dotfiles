@@ -94,7 +94,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zshi"
-source $ZSH_CUSTOM/alias.zsh`
+source $ZSH_CUSTOM/alias.zsh
 
 #Exports
 export PATH="/usr/local/sbin:$PATH"
@@ -112,4 +112,4 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # # .zshrc
-# zprof # ZSH Performance End 
+# zprof # ZSH Performance End
