@@ -51,4 +51,31 @@ mac () {
 	brew tap homebrew/bundle
 	brew bundle --file $dot/packages/mac/Brewfile
 
+	# Preparing Dotfiles
+	printf "%s\n" $yellow
+	echo 	"#########################"
+	echo 	"###     Setting up    ###"
+	echo	"###      Dotfiles     ###"
+	echo -e "#########################\n" $normal
+
+	# Removing .zshrc .oh-my-zsh/custom/* .vimrc 
+	printf "%sRemoving .vimrc, .zshrc, .gitignore .tmux.conf .vim .nvim\n" $red
+
+	rm -rfv $home/.vimrc $home/.zshrc $home/.gitignore $home/.tmux.conf $home/.vim $home/.config/nvim
+
+	# Stowing Dotfiles
+	printf "%s\n" $yellow
+	echo 	"#########################"
+	echo 	"###  Stowing Dotfiles ###"
+	echo -e "#########################\n" $normal
+
+	# Cd'ing into Code folder
+	printf "%sNavigating into $packages directory\n\n" $green
+	cd $packages
+	sleep 2
+
+	printf "%sStowing OS common files...\n\n" $green
+	stow -t ~/ common --ignore=".oh-my-zsh" -v
+	# stow -n -t ~/ common --ignore=".oh-my-zsh" -v # Mock Stow
+
 }
