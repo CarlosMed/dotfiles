@@ -41,11 +41,14 @@ mac () {
 		echo "Oh My ZSH already installed"
 	fi
 
-	printf "%s\n" $blue
+	# Setting up brew packages
+	printf "%s\n" $yellow
 	echo "#########################"
 	echo "###  Installing Brew  ###"
 	echo "###      Packages     ###"
 	echo "#########################"
 
-	brew install git mongodb neofetch openssl dpkg
+	brew tap homebrew/bundle
+	brew bundle --file $dot/packages/mac/Brewfile
+
 }
