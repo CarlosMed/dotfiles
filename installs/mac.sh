@@ -8,8 +8,8 @@ mac () {
 	echo "           For $os             "
 	echo "*******************************"
 	echo $nl
-	# sleep 2
-
+	sleep 3
+	
 	# Installing Homebrew
 	printf "%s\n" $blue
 	echo "#########################"
@@ -20,11 +20,11 @@ mac () {
 	if test ! $(which brew); then
 		echo "Installing Homebrew..."
 
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	else
 		echo "Homebrew already installed"
 	fi
-
+	
 	# Installing oh-my-zsh
 	printf "%s\n" $blue
 	echo "#########################"
