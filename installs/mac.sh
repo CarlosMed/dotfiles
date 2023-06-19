@@ -11,7 +11,7 @@ mac () {
 	sleep 3
 	
 	# Installing Homebrew
-	printf "%s\n" $blue
+	printf "%s" $yellow
 	echo "#########################"
 	echo "###  Installing Brew  ###"
 	echo "#########################"
@@ -26,7 +26,7 @@ mac () {
 	fi
 	
 	# Installing oh-my-zsh
-	printf "%s\n" $blue
+	printf "%s\n" $yellow
 	echo "#########################"
 	echo "###     Installing    ###"
 	echo "###     oh-my-zsh     ###"
