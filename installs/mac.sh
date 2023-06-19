@@ -88,4 +88,25 @@ mac () {
 	# Set macOS preferences - we will run this last because this will reload the shell
 	source $packages/mac/.macos
 
+	printf $blue
+	echo "*******************************"
+	echo "     Installation Complete     "
+	echo "           For $os             "
+	echo "*******************************"
+	echo $nl
+
+	printf "%sPlease review below to make sure all stowed links are correct...\n" $green
+
+	# LS'ing home directory
+	echo $nl
+	ls -la $home
+	cd $home
+	sleep 3
+
+	# Sourcing zsh to restart the shell
+	printf "%s\nRestarting shell...\n\n" $green
+	echo $nl
+	
+	sleep 2
+	exec zsh
 }
