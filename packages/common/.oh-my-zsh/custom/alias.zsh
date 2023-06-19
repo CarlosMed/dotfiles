@@ -7,9 +7,10 @@ alias tup="tmux source-file ~/.tmux.conf"
 alias zup="exec zsh" # View: https://unix.stackexchange.com/questions/532548/how-do-i-apply-the-changes-to-the-zshrc-file-after-editing-it
 # alias zup="source ~/.zshrc"
 
-# Editors
+# Programming
 alias v="vim"
 alias c="code"
+alias nr="npm run"
 
 # Arch shortcuts
 alias stx="startx"
