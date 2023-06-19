@@ -78,4 +78,14 @@ mac () {
 	stow -t ~/ common --ignore=".oh-my-zsh" -v
 	# stow -n -t ~/ common --ignore=".oh-my-zsh" -v # Mock Stow
 
+	# Preparing MacOS terminal commands
+	printf "%s\n" $yellow
+	echo 	"#########################"
+	echo 	"###     Setting up    ###"
+	echo	"###     MacOS Pref    ###"
+	echo -e "#########################\n" $normal
+
+	# Set macOS preferences - we will run this last because this will reload the shell
+	source $packages/mac/.macos
+
 }
