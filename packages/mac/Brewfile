@@ -17,7 +17,7 @@ brew 'mackup'
 brew 'mas' # Mac App Store manager
 brew 'pkg-config'
 brew 'stow'
-
+brew 'tree'
 
 # Dev
 brew 'asdf'
