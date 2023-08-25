@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # zmodload zsh/zprof        # Used to measure ZSH performance
 user="$(whoami)"
 custom=$HOME/Code/dotfiles/packages/common/.oh-my-zsh/custom
@@ -101,3 +103,6 @@ export PATH="/usr/local/sbin:$PATH"
 
 # # .zshrc
 # zprof # ZSH Performance End
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
