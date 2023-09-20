@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Fig pre block. Keep at the top of this file.
 [[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # zmodload zsh/zprof        # Used to measure ZSH performance
@@ -13,14 +20,15 @@ export ZSH=~/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="geometry/geometry"
-# ZSH_THEME="spaceship/spaceship"
+# ZSH_THEME="geometry/geometry"
+# ZSH_THEME="spaceship"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Geometry Theme Settings
-GEOMETRY_PROMPT_PLUGINS=(exec_time node git)
-GEOMETRY_COLOR_PACKAGER_VERSION="black"
-GEOMETRY_SYMBOL_PACKAGER_VERSION="⬡"
-PROMPT_GEOMETRY_COLORIZE_SYMBOL=true
+#GEOMETRY_PROMPT_PLUGINS=(exec_time node git)
+#GEOMETRY_COLOR_PACKAGER_VERSION="black"
+#GEOMETRY_SYMBOL_PACKAGER_VERSION="⬡"
+#PROMPT_GEOMETRY_COLORIZE_SYMBOL=true
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -64,7 +72,7 @@ ZSH_CUSTOM=$custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git tmux z asdf zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(git z asdf zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,3 +114,8 @@ export PATH="/usr/local/sbin:$PATH"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+
+#eval "$(starship init zsh)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
