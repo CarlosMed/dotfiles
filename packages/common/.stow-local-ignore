@@ -1,0 +1,5 @@
+# ignoring since the .zshrc file uses the local folder rather than ~/
+.oh-my-zsh
+
+# Stows to a different location from ~/
+chrome

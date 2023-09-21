@@ -9,7 +9,7 @@ mac () {
 	echo "*******************************"
 	echo $nl
 	sleep 3
-	
+
 	# Installing Homebrew
 	printf "%s" $yellow
 	echo "#########################"
@@ -24,7 +24,7 @@ mac () {
 	else
 		echo "Homebrew already installed"
 	fi
-	
+
 	# Installing oh-my-zsh
 	printf "%s\n" $yellow
 	echo "#########################"
@@ -35,7 +35,7 @@ mac () {
 	printf "%s\n" $green
 	if ! $(test -d "$home/.oh-my-zsh"); then
 		echo "Installing Oh My ZSH"
-		
+
 		sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	else
 		echo "Oh My ZSH already installed"
@@ -58,7 +58,7 @@ mac () {
 	echo	"###      Dotfiles     ###"
 	echo -e "#########################\n" $normal
 
-	# Removing .zshrc .oh-my-zsh/custom/* .vimrc 
+	# Removing .zshrc .oh-my-zsh/custom/* .vimrc
 	printf "%sRemoving .vimrc, .zshrc, .gitignore .tmux.conf .vim .nvim\n" $red
 
 	rm -rfv $home/.vimrc $home/.zshrc $home/.gitignore $home/.tmux.conf $home/.vim $home/.config/nvim
@@ -75,7 +75,7 @@ mac () {
 	sleep 2
 
 	printf "%sStowing OS common files...\n\n" $green
-	stow -t ~/ common --ignore=".oh-my-zsh" -v
+	stow -t ~/ common -v
 	# stow -n -t ~/ common --ignore=".oh-my-zsh" -v # Mock Stow
 
 	# Preparing MacOS terminal commands
@@ -106,7 +106,7 @@ mac () {
 	# Sourcing zsh to restart the shell
 	printf "%s\nRestarting shell...\n\n" $green
 	echo $nl
-	
+
 	sleep 2
 	exec zsh
 }
