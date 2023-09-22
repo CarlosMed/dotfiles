@@ -1,0 +1,5 @@
+-d ~/Code/dotfiles/packages/common
+-t ~
+--ignore=.oh-my-zsh
+--ignore=chrome
+-vv

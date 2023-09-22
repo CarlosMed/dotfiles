@@ -70,12 +70,13 @@ mac () {
 	echo -e "#########################\n" $normal
 
 	# Cd'ing into Code folder
-	printf "%sNavigating into $packages directory\n\n" $green
-	cd $packages
+	printf "%sNavigating into $dot directory\n\n" $green
+	cd $dot
 	sleep 2
 
 	printf "%sStowing OS common files...\n\n" $green
-	stow -t ~/ common -v
+	# Thanks to the .stowrc file we can just run the below command
+	stow .
 	# stow -n -t ~/ common --ignore=".oh-my-zsh" -v # Mock Stow
 
 	# Preparing MacOS terminal commands
