@@ -79,6 +79,9 @@ mac () {
 	stow .
 	# stow -n -t ~/ common --ignore=".oh-my-zsh" -v # Mock Stow
 
+	# Hushing terminal login in MacOS
+	cd $home && touch .hushlogin
+
 	# Preparing MacOS terminal commands
 	printf "%s\n" $yellow
 	echo 	"#########################"
