@@ -1,0 +1,136 @@
+local actions = require("telescope.actions")
+local T = "<cmd>Telescope "
+local cr = "<cr>"
+
+return {
+  -- Fuzzy Finder (files, lsp, etc)
+  "nvim-telescope/telescope.nvim",
+  cmd = "Telescope",
+  version = false,
+  -- branch = "0.1.x",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    -- Fuzzy Finder Algorithm which requires local dependencies to be built.
+    -- Only load if `make` is available. Make sure you have the system
+    -- requirements installed.
+    {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      -- NOTE: If you are having trouble with this installation,
+      --       refer to the README for telescope-fzf-native for more instructions.
+      build = "make",
+      enabled = vim.fn.executable("make") == 1,
+      config = function()
+        require("telescope").load_extension("fzf")
+      end,
+    },
+  },
+  opts = {
+    pickers = {
+      find_files = {
+        hidden = true,
+        -- theme = "dropdown",
+      },
+      -- live_grep = {
+      --   theme = "dropdown",
+      -- },
+      -- help_tags = {
+      --   theme = "dropdown",
+      -- },
+    },
+    defaults = {
+      file_ignore_patterns = { "node_modules", "yarn.lock" },
+      dynamic_preview_title = true,
+      path_display = { "smart" },
+      mappings = {
+        i = {
+          ["<esc>"] = actions.close,
+          ["<C-j>"] = actions.move_selection_next,
+          ["<C-k>"] = actions.move_selection_previous,
+        },
+      },
+      prompt_prefix = " ",
+      selection_caret = " ",
+      -- open files in the first window that is an actual file.
+      -- use the current window if no other window is available.
+      get_selection_window = function()
+        local wins = vim.api.nvim_list_wins()
+        table.insert(wins, 1, vim.api.nvim_get_current_win())
+        for _, win in ipairs(wins) do
+          local buf = vim.api.nvim_win_get_buf(win)
+          if vim.bo[buf].buftype == "" then
+            return win
+          end
+        end
+        return 0
+      end,
+    },
+    layout_config = {
+      horizontal = {
+        preview_cutoff = 100,
+        preview_width = 0.6,
+      },
+    },
+  },
+
+  keys = {
+    {
+      "<leader>,",
+      "<cmd>Telescope buffers sort_mru=true sort_lastused=true<cr>",
+      desc = "Switch Buffer",
+    },
+    -- { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Grep (root dir)" },
+    { "<leader>/", T .. "live_grep" .. cr, desc = "Grep (root dir)" },
+    { "<leader>:", T .. "command_history" .. cr, desc = "Command History" },
+    -- { "<leader><space>", Util.telescope("files"), desc = "Find Files (root dir)" },
+    -- find
+    { "<leader>fb", T .. "buffers sort_mru=true sort_lastused=true" .. cr, desc = "Buffers" },
+    -- { "<leader>fc", M.config_files(), desc = "Find Config File" },
+    { "<leader>ff", T .. "find_files" .. cr, desc = "Find Files (root dir)" },
+    -- { "<leader>fF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
+    { "<leader>fr", T .. "oldfiles" .. cr, desc = "Recent" },
+    -- { "<leader>fR", Util.telescope("oldfiles", { cwd = vim.loop.cwd() }), desc = "Recent (cwd)" },
+    -- git
+    { "<leader>gc", T .. "git_commits" .. cr, desc = "commits" },
+    { "<leader>gs", T .. "git_status" .. cr, desc = "status" },
+    -- search
+    { '<leader>s"', T .. "registers" .. cr, desc = "Registers" },
+    { "<leader>sa", T .. "autocommands" .. cr, desc = "Auto Commands" },
+    { "<leader>sb", T .. "current_buffer_fuzzy_find" .. cr, desc = "Buffer" },
+    { "<leader>sc", T .. "command_history" .. cr, desc = "Command History" },
+    { "<leader>sC", T .. "commands" .. cr, desc = "Commands" },
+    { "<leader>sd", T .. "diagnostics bufnr=0" .. cr, desc = "Documen diagnostics" },
+    { "<leader>sD", T .. "diagnostics" .. cr, desc = "Workspace diagnostics" },
+    -- { "<leader>sg", Util.telescope("live_grep"), desc = "Grep (root dir)" },
+    -- { "<leader>sG", Util.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
+    { "<leader>sh", T .. "help_tags" .. cr, desc = "Help Pages" },
+    { "<leader>sH", T .. "highlights" .. cr, desc = "Search Highligh Groups" },
+    { "<leader>sk", T .. "keymaps" .. cr, desc = "Key Maps" },
+    { "<leader>sM", T .. "man_pages" .. cr, desc = "Man Pages" },
+    { "<leader>sm", T .. "marks" .. cr, desc = "Jump to Mark" },
+    { "<leader>so", T .. "vim_options" .. cr, desc = "Options" },
+    { "<leader>sR", T .. "resume" .. cr, desc = "Resume" },
+    -- { "<leader>sw", Util.telescope("grep_string", { word_match = "-w" }), desc = "Word (root dir)" },
+    -- { "<leader>sW", Util.telescope("grep_string", { cwd = false, word_match = "-w" }), desc = "Word (cwd)" },
+    -- { "<leader>sw", Util.telescope("grep_string"), mode = "v", desc = "Selection (root dir)" },
+    -- { "<leader>sW", Util.telescope("grep_string", { cwd = false }), mode = "v", desc = "Selection (cwd)" },
+    -- { "<leader>uC", Util.telescope("colorscheme", { enable_preview = true }), desc = "Colorscheme with preview" },
+    {
+      "<leader>ss",
+      function()
+        require("telescope.builtin").lsp_document_symbols({
+          symbols = require("lazyvim.config").get_kind_filter(),
+        })
+      end,
+      desc = "Goto Symbol",
+    },
+    {
+      "<leader>sS",
+      function()
+        require("telescope.builtin").lsp_dynamic_workspace_symbols({
+          symbols = require("lazyvim.config").get_kind_filter(),
+        })
+      end,
+      desc = "Goto Symbol (Workspace)",
+    },
+  },
+}

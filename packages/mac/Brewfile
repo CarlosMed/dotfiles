@@ -20,6 +20,7 @@ brew 'stow'
 brew 'tree'
 
 # Dev
+brew 'neovim'
 brew 'asdf'
 brew 'imagemagick'
 
