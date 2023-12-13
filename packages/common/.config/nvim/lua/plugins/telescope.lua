@@ -1,4 +1,3 @@
-local actions = require("telescope.actions")
 local T = "<cmd>Telescope "
 local cr = "<cr>"
 
@@ -6,13 +5,8 @@ return {
   -- Fuzzy Finder (files, lsp, etc)
   "nvim-telescope/telescope.nvim",
   cmd = "Telescope",
-  version = false,
-  -- branch = "0.1.x",
+  branch = "0.1.x",
   dependencies = {
-    "nvim-lua/plenary.nvim",
-    -- Fuzzy Finder Algorithm which requires local dependencies to be built.
-    -- Only load if `make` is available. Make sure you have the system
-    -- requirements installed.
     {
       "nvim-telescope/telescope-fzf-native.nvim",
       -- NOTE: If you are having trouble with this installation,
@@ -43,9 +37,9 @@ return {
       path_display = { "smart" },
       mappings = {
         i = {
-          ["<esc>"] = actions.close,
-          ["<C-j>"] = actions.move_selection_next,
-          ["<C-k>"] = actions.move_selection_previous,
+          ["<esc>"] = "close",
+          ["<C-j>"] = "move_selection_next",
+          ["<C-k>"] = "move_selection_previous",
         },
       },
       prompt_prefix = " ",
