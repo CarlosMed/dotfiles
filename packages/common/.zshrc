@@ -107,6 +107,7 @@ fi
 source $ZSH_CUSTOM/alias.zsh
 
 #Exports
+export XDG_CONFIG_HOME=/Users/carlos.medina/.config
 export PATH="/usr/local/sbin:$PATH"
 
 # # .zshrc
