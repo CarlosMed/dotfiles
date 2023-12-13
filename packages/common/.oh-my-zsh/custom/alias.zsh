@@ -10,7 +10,6 @@ alias stx="startx"
 alias xup="xrdb ~/.Xresources"
 
 # Generic
-
 alias huh="alias | grep"
 alias lip="ipconfig getifaddr en0"
 alias reboot="_ reboot"
@@ -31,6 +30,7 @@ alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && k
 
 # Disable Spotlight
 alias spotoff="sudo mdutil -a -i off"
+
 # Enable Spotlight
 alias spoton="sudo mdutil -a -i on"
 
