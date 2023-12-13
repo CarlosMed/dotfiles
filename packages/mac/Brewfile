@@ -9,7 +9,6 @@ brew 'coreutils'
 brew 'bat' # Better version of "cat" terminal command
 brew 'curl' # Better version of "cat" terminal command
 brew 'ffmpeg' # Audio and Video Converter
-brew 'git'
 brew 'grep'
 brew 'httpie'
 brew 'jq' # command-line JSON processor
@@ -22,8 +21,10 @@ brew 'ripgrep'
 brew 'fzf'
 
 # Dev
+brew 'git'
 brew 'neovim'
 brew 'tmux'
+brew 'lazygit'
 brew 'asdf'
 brew 'imagemagick'
 

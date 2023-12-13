@@ -1,0 +1,8 @@
+gui:
+  theme:
+    selectedLineBgColor:
+      - "#313244"
+keybinding:
+  commits:
+    moveDownCommit: "D"
+    moveUpCommit: "U"
