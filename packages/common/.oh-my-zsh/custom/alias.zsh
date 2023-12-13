@@ -16,7 +16,7 @@ alias lip="ipconfig getifaddr en0"
 alias reboot="_ reboot"
 alias shutdown="_ shutdown"
 alias trash="npx trash-cli"
-alias tup="tmux source-file ~/.tmux.conf"
+alias tup="tmux source-file ~/.config/tmux/tmux.conf"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"

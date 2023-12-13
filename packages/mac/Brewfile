@@ -23,6 +23,7 @@ brew 'fzf'
 
 # Dev
 brew 'neovim'
+brew 'tmux'
 brew 'asdf'
 brew 'imagemagick'
 
