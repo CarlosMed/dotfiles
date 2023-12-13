@@ -1,5 +1,6 @@
 -d ~/Code/dotfiles/packages/common
 -t ~
 --ignore=.oh-my-zsh
+--ignore=.DS_Store
 --ignore=chrome
 -vv
