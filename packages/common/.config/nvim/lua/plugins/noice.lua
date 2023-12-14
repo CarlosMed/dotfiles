@@ -1,5 +1,5 @@
 return {
-  "folke/noice.nvim",
+  "folke/noice.nvim", -- a fancy, configurable, notification manager for NeoVim
   event = "VeryLazy",
   -- enabled = false,
   opts = {

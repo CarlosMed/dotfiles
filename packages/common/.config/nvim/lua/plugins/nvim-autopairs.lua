@@ -1,9 +1,7 @@
 return {
+  -- A super powerful autopair plugin for Neovim that supports multiple characters.
   "windwp/nvim-autopairs",
-  event = { "InsertEnter" },
-  dependencies = {
-    "hrsh7th/nvim-cmp",
-  },
+  event = "VeryLazy",
   config = function()
     -- import nvim-autopairs
     local autopairs = require("nvim-autopairs")

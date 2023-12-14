@@ -1,5 +1,5 @@
 return {
-  "rcarriga/nvim-notify",
+  "rcarriga/nvim-notify", -- UI for messages, cmdline and the popupmenu.
   keys = {
     {
       "<leader>un",
