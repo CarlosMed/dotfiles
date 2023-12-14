@@ -1,4 +1,4 @@
-require("null.remap")
-require("null.set")
+require("null.options")
+require("null.keymaps")
 require("null.lazy")
 require("null.util")
