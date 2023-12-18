@@ -42,7 +42,7 @@ return {
           ["<C-k>"] = "move_selection_previous",
         },
       },
-      prompt_prefix = " ",
+      prompt_prefix = "  ",
       selection_caret = " ",
       -- open files in the first window that is an actual file.
       -- use the current window if no other window is available.
@@ -73,12 +73,12 @@ return {
       desc = "Switch Buffer",
     },
     -- { "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Grep (root dir)" },
-    { "<leader>/", T .. "live_grep" .. cr, desc = "Grep (root dir)" },
+    { "<leader>fg", T .. "live_grep" .. cr, desc = "Grep (root dir)" },
     { "<leader>:", T .. "command_history" .. cr, desc = "Command History" },
     -- { "<leader><space>", Util.telescope("files"), desc = "Find Files (root dir)" },
     -- find
     { "<leader>fb", T .. "buffers sort_mru=true sort_lastused=true" .. cr, desc = "Buffers" },
-    -- { "<leader>fc", M.config_files(), desc = "Find Config File" },
+    { "<leader>fc", T .. "find_files cwd=~/.config/nvim" .. cr, desc = "Find Config File" },
     { "<leader>ff", T .. "find_files" .. cr, desc = "Find Files (root dir)" },
     -- { "<leader>fF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
     { "<leader>fr", T .. "oldfiles" .. cr, desc = "Recent" },
