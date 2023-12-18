@@ -4282,7 +4282,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>Transparency</key>
 			<real>0.044142287234042545</real>
 			<key>Unicode Normalization</key>
@@ -4397,7 +4397,7 @@
 	<key>TerminalVMargin</key>
 	<integer>20</integer>
 	<key>UIElementRequiresHotkeys</key>
-	<true/>
+	<false/>
 	<key>UseBorder</key>
 	<false/>
 	<key>UseExperimentalFontMetrics</key>
