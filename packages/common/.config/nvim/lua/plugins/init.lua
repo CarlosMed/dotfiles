@@ -6,4 +6,5 @@ return {
   { "kdheepak/lazygit.nvim", keys = { { "<c-g>", "<cmd>LazyGit<cr>" } } },
   { "sindrets/diffview.nvim", event = "VeryLazy" },
   { "test", dev = true, enabled = false },
+  { "echasnovski/mini.pairs", event = "VeryLazy", version = false, opts = {} },
 }
