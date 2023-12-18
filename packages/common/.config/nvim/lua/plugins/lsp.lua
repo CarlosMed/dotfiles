@@ -1,7 +1,7 @@
 return {
   -- LSP Configuration & Plugins
   "neovim/nvim-lspconfig",
-  event = "VeryLazy",
+  event = { "BufReadPost", "BufWritePost", "BufNewFile" },
   dependencies = {
     -- Automatically install LSPs to stdpath for neovim
     -- enable mason and configure icons
