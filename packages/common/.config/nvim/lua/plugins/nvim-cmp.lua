@@ -1,7 +1,7 @@
 return {
   "hrsh7th/nvim-cmp", -- Autocompletion
   version = false,
-  event = "VeryLazy",
+  event = { "BufReadPost", "BufWritePost", "BufNewFile" },
   dependencies = {
     "L3MON4D3/LuaSnip", -- Snippet Engine & its associated nvim-cmp source
     "saadparwaiz1/cmp_luasnip", -- Snippet Engine & its associated nvim-cmp source
@@ -29,6 +29,10 @@ return {
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
+      },
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
       },
       mapping = cmp.mapping.preset.insert({
         ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -67,6 +71,7 @@ return {
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
         format = lspkind.cmp_format({
+          with_text = true,
           maxwidth = 50,
           ellipsis_char = "...",
         }),

@@ -25,6 +25,10 @@ return {
           "stylua", -- lua formatter
           "eslint_d", -- js linter
         },
+        auto_update = false,
+        run_on_start = true,
+        -- start_delay = 3000, -- 3 second delay
+        -- debounce_hours = 5, -- at least 5 hours between attempts to install/update
       },
     },
 
@@ -82,6 +86,12 @@ return {
       end, { desc = "Format current buffer with LSP" })
     end
 
+    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+    for type, icon in pairs(signs) do
+      local hl = "DiagnosticSign" .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+    end
+
     local servers = {
       custom_elements_ls = {},
       emmet_language_server = {},
@@ -109,9 +119,9 @@ return {
     local mason_lspconfig = require("mason-lspconfig")
 
     mason_lspconfig.setup({
+      automatic_installation = true,
       ensure_installed = vim.tbl_keys(servers),
     })
-    print(P(vim.tbl_keys(servers)))
 
     mason_lspconfig.setup_handlers({
       function(server_name)
