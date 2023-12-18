@@ -37,10 +37,19 @@ vim.opt.scrolloff = 8 -- start scrolling once there are 8 lines left
 vim.opt.isfname:append("@-@")
 
 --code folding
-vim.o.foldcolumn = "1" -- '0' is not bad
+vim.o.foldcolumn = "0" -- '0' is not bad
 vim.o.foldlevel = 99 -- using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
+vim.opt.fillchars = {
+  foldopen = "",
+  foldclose = "",
+  fold = "⸱",
+  -- fold = " ",
+  foldsep = " ",
+  diff = "╱",
+  eob = " ",
+}
 -- vim.o.foldclose = "all"
 
 -- searching
@@ -51,7 +60,7 @@ vim.opt.incsearch = true -- turns on incremental search
 
 -- Decrease update time
 vim.o.timeoutlen = 300
-vim.o.updatetime = 50 -- fast update time
+vim.o.updatetime = 200 -- fast update time
 
 -- Undo history and swap files
 vim.opt.swapfile = false
@@ -62,6 +71,10 @@ vim.opt.undofile = true
 -- disable netrw for nvim-tree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+if vim.fn.has("nvim-0.10") == 1 then
+  vim.opt.smoothscroll = true
+end
 
 --[[ UNUSED OPTIONS ]]
 -- -- Set completeopt to have a better completion experience
