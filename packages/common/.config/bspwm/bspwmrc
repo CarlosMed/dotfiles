@@ -1,0 +1,22 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+bspc config border_width         2
+bspc config window_gap          10
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a firefox desktop='^2'
+
+# AutoStart Applications
+sxhkd &
+polybar &
+xrandr --output Virtual-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal
+nitrogen --restore &
+#picom --config ~/.config/picom/picom.conf --no-vsync &
+# picom --no-vsync &
