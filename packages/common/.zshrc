@@ -108,7 +108,7 @@ source $ZSH_CUSTOM/alias.zsh
 
 #Exports
 export XDG_CONFIG_HOME=/Users/carlos.medina/.config
-export PATH="/usr/local/sbin:$PATH"
+export PATH="$PATH:/usr/local/sbin:/opt/nvim-linux64/bin"
 
 # # .zshrc
 # zprof # ZSH Performance End
