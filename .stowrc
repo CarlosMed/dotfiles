@@ -3,4 +3,6 @@
 --ignore=.oh-my-zsh
 --ignore=.DS_Store
 --ignore=chrome
+--ignore=.vim
+--ignore=.vimrc
 -vv
