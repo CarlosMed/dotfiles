@@ -6,3 +6,7 @@ keybinding:
   commits:
     moveDownCommit: "D"
     moveUpCommit: "U"
+git:
+  paging:
+    colorArg: always
+    pager: diff-so-fancy
