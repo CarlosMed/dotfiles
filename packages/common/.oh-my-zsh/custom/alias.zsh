@@ -3,6 +3,7 @@ alias c="code"
 alias v="nvim"
 alias vz="NVIM_APPNAME=nvim-lazyvim nvim"
 alias nr="npm run"
+alias lz="lazygit"
 
 # Arch shortcuts
 alias pacman="_ pacman"
