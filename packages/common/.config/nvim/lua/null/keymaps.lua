@@ -31,6 +31,13 @@ keymap.set("n", "J", "mzJ`z") -- leaves cursor in place when <shift + j>
 keymap.set("n", "<C-d>", "<C-d>zz")
 keymap.set("n", "<C-u>", "<C-u>zz")
 
+keymap.set({ "n", "o", "x" }, "<S-h>", "^", { noremap = true, silent = true })
+keymap.set({ "n", "o", "x" }, "<S-l>", "g_", { noremap = true, silent = true })
+
+keymap.set("n", "<leader>ba", "<cmd>%bd|e#|bd#<cr>", { desc = "Delete All Buffers" })
+-- keymap.set("i", "<c-j>", "<c-n>", { noremap = true, silent = true })
+-- keymap.set("i", "<c-k>", "<c-p>", { noremap = true, silent = true })
+
 -- allows search terms to stay in the middle
 keymap.set("n", "n", "nzzzv")
 keymap.set("n", "N", "Nzzzv")
@@ -53,8 +60,6 @@ keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left
 
 -- makes a file executable
 keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
-
-keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>")
 
 -- Remap for dealing with word wrap
 keymap.set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -88,6 +93,8 @@ local diagnostic_goto = function(next, severity)
 end
 
 keymap.set("n", "<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+keymap.set("n", "[b", "<cmd>bprevious<cr>", { desc = "Buffer Previous" })
+keymap.set("n", "]b", "<cmd>bnext<cr>", { desc = "Buffer Next" })
 keymap.set("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
 keymap.set("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
 keymap.set("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })

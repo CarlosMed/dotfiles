@@ -24,13 +24,14 @@ vim.opt.shiftwidth = 2 -- 2 spaces for indent width
 vim.opt.expandtab = true -- expand tabs to spaces
 vim.opt.autoindent = true -- copy indent from current line when adding a new line
 vim.opt.smartindent = true -- indents lines smartly
-vim.opt.wrap = false -- option to wrap text
+vim.opt.wrap = true -- option to wrap text
 vim.opt.softtabstop = 2
 
 --[[ Behavior ]]
 
 vim.opt.splitright = true -- adds all split panes to the right
 vim.opt.splitbelow = true -- adds all split panes to the bottom
+-- vim.opt.inccommand = "split" -- adds all split panes to the bottom
 
 -- Scrolling
 vim.opt.scrolloff = 8 -- start scrolling once there are 8 lines left
