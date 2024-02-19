@@ -1,7 +1,7 @@
 return {
-  "folke/noice.nvim", -- a fancy, configurable, notification manager for NeoVim
-  event = "VeryLazy",
+  "folke/noice.nvim", -- Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu
   -- enabled = false,
+  event = "VeryLazy",
   opts = {
     -- add any options here
     presets = {

@@ -19,6 +19,10 @@ return {
     },
   },
   opts = {
+    buffers = {
+      initial_mode = "normal",
+      sort_mru = true, -- sort by last open buffer
+    },
     pickers = {
       find_files = {
         hidden = true,
@@ -32,7 +36,7 @@ return {
       -- },
     },
     defaults = {
-      file_ignore_patterns = { "node_modules", "yarn.lock" },
+      file_ignore_patterns = { "node_modules", "lazy-lock.json", ".git/" },
       dynamic_preview_title = true,
       path_display = { "smart" },
       mappings = {
@@ -77,7 +81,7 @@ return {
     { "<leader>:", T .. "command_history" .. cr, desc = "Command History" },
     -- { "<leader><space>", Util.telescope("files"), desc = "Find Files (root dir)" },
     -- find
-    { "<leader>fb", T .. "buffers sort_mru=true sort_lastused=true" .. cr, desc = "Buffers" },
+    { "<leader><leader>", T .. "buffers sort_mru=true sort_lastused=true" .. cr, desc = "Buffers" },
     { "<leader>fc", T .. "find_files cwd=~/.config/nvim" .. cr, desc = "Find Config File" },
     { "<leader>ff", T .. "find_files" .. cr, desc = "Find Files (root dir)" },
     -- { "<leader>fF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },

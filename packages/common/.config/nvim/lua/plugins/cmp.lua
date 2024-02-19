@@ -66,14 +66,16 @@ return {
       sources = {
         { name = "nvim_lsp" },
         { name = "luasnip" },
+        { name = "buffer" },
         { name = "path" }, -- file system paths
       },
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
         format = lspkind.cmp_format({
-          with_text = true,
+          mode = "symbol",
           maxwidth = 50,
           ellipsis_char = "...",
+          show_labelDetails = true,
         }),
       },
     })

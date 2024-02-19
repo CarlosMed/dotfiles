@@ -1,5 +1,6 @@
 return {
   "mfussenegger/nvim-lint",
+  enabled = false,
   lazy = true,
   event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
   config = function()
@@ -22,7 +23,7 @@ return {
       end,
     })
 
-    vim.keymap.set("n", "<leader>ll", function()
+    vim.keymap.set("n", "<leader>cl", function()
       lint.try_lint()
     end, { desc = "Trigger linting for current file" })
   end,

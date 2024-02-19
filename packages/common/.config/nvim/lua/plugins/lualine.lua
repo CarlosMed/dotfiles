@@ -22,7 +22,7 @@ return {
       component_separators = { left = "|", right = "|" },
       section_separators = { left = "", right = "" },
       disabled_filetypes = {
-        statusline = {},
+        statusline = { "dashboard" },
         winbar = {},
       },
       ignore_focus = {},
@@ -43,6 +43,7 @@ return {
         "diagnostics",
         { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
         { "filename", path = 1 },
+        -- { "buffers" },
       },
       lualine_x = {
         {

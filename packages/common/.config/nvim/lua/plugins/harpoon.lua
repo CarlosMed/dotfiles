@@ -5,6 +5,7 @@ return {
       "<leader>hm",
       function()
         require("harpoon.mark").add_file()
+        vim.notify("󱡅  marked file")
       end,
     },
     {

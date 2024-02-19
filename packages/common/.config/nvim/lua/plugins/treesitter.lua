@@ -79,6 +79,7 @@ return {
         "regex",
         "toml",
         "vimdoc",
+        "c",
       },
       incremental_selection = {
         enable = true,
