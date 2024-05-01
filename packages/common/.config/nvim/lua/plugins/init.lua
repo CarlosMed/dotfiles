@@ -15,4 +15,5 @@ return {
   { "echasnovski/mini.pairs", event = "VeryLazy", version = false, opts = {} },
   { "mg979/vim-visual-multi", event = { "BufReadPost", "BufWritePost", "BufNewFile" } },
   { "kdheepak/lazygit.nvim", keys = { { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" } } },
+  { "luckasRanarison/tailwind-tools.nvim", dependencies = { "nvim-treesitter/nvim-treesitter" }, opts = {} },
 }

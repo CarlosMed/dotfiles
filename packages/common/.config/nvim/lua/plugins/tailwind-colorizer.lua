@@ -1,7 +1,7 @@
 return {
   "roobert/tailwindcss-colorizer-cmp.nvim",
   -- optionally, override the default options:
-  -- enabled = false,
+  enabled = false,
   event = "VeryLazy",
   config = function()
     require("tailwindcss-colorizer-cmp").setup({
