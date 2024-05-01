@@ -41,3 +41,6 @@ alias zup="exec zsh"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
+
+alias ls='eza --color=always --icons=always --long --git --no-filesize --no-time --no-user --no-permissions'
+

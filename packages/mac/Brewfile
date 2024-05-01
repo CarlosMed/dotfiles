@@ -7,7 +7,7 @@ tap 'homebrew/bundle'
 # Bins
 brew 'coreutils'
 brew 'bat' # Better version of "cat" terminal command
-brew 'curl' # Better version of "cat" terminal command
+brew 'curl'
 brew 'ffmpeg' # Audio and Video Converter
 brew 'grep'
 brew 'httpie'
@@ -19,6 +19,7 @@ brew 'stow'
 brew 'tree'
 brew 'ripgrep'
 brew 'fzf'
+brew 'eza'
 
 # Dev
 brew 'git'
