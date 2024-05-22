@@ -42,5 +42,6 @@ alias zup="exec zsh"
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
 
-alias ls='eza --color=always --icons=always --long --git --no-filesize --no-time --no-user --no-permissions'
-
+alias searchmodules='find . -name "node_modules" -type d -prune -print | xargs du -chs'
+alias purgemodules="find . -name "node_modules" -type d -prune -print -exec rm -rf '{}' \;"
+# alias ls='eza --color=always --icons=always --long --git --no-filesize --no-time --no-user --no-permissions'
