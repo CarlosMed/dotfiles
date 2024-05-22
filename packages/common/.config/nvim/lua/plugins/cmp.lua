@@ -73,7 +73,7 @@ return {
       formatting = {
         format = lspkind.cmp_format({
           before = require("tailwind-tools.cmp").lspkind_format,
-          mode = "symbol",
+          -- mode = "symbol",
           maxwidth = 50,
           ellipsis_char = "...",
           show_labelDetails = true,

@@ -38,7 +38,8 @@ return {
     defaults = {
       file_ignore_patterns = { "node_modules", "lazy-lock.json", ".git/" },
       dynamic_preview_title = true,
-      path_display = { "smart" },
+      -- path_display = { "smart" },
+      path_display = { "filename_first" },
       mappings = {
         i = {
           ["<esc>"] = "close",
