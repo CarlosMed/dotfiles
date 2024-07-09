@@ -1,6 +1,9 @@
 return {
   "stevearc/oil.nvim",
   opts = {
+    delete_to_trash = true,
+    skip_confirm_for_simple_edits = false,
+
     float = {
       max_height = 20,
       max_width = 60,
