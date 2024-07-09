@@ -17,8 +17,10 @@
 	<key>BadgeTopMargin</key>
 	<integer>20</integer>
 	<key>CheckTestRelease</key>
-	<true/>
+	<false/>
 	<key>CloseBookmarksWindowAfterOpening</key>
+	<true/>
+	<key>ConvertDosNewlines</key>
 	<true/>
 	<key>CopySelection</key>
 	<true/>
@@ -2391,6 +2393,8 @@
 	<false/>
 	<key>EnableProxyIcon</key>
 	<false/>
+	<key>EscapeShellCharsWithBackslash</key>
+	<false/>
 	<key>FlashTabBarInFullscreen</key>
 	<false/>
 	<key>FontsForGenerousRounding</key>
@@ -3397,6 +3401,19 @@
 				<key>Red Component</key>
 				<real>0.023000000044703484</real>
 			</dict>
+			<key>Match Background Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.0</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>1</real>
+				<key>Red Component</key>
+				<real>1</real>
+			</dict>
 			<key>Minimum Contrast</key>
 			<real>0.0</real>
 			<key>Mouse Reporting</key>
@@ -3864,7 +3881,7 @@
 				<real>0.087016984820365906</real>
 			</dict>
 			<key>Background Image Location</key>
-			<string>/Users/carlos.medina/Code/dotfiles/packages/common/Pictures/Gruvbox-Dark/palm_grain_0_045.jpg</string>
+			<string>/Users/carlos.medina/Code/dotfiles/packages/common/Pictures/Gruvbox-Dark/flowers_gruvbox.png</string>
 			<key>Background Image Mode</key>
 			<integer>2</integer>
 			<key>Badge Color</key>
@@ -4425,6 +4442,19 @@
 				<key>Red Component</key>
 				<real>0.023000000044703484</real>
 			</dict>
+			<key>Match Background Color</key>
+			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
+				<key>Blue Component</key>
+				<real>0.0</real>
+				<key>Color Space</key>
+				<string>P3</string>
+				<key>Green Component</key>
+				<real>1</real>
+				<key>Red Component</key>
+				<real>1</real>
+			</dict>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -4665,6 +4695,12 @@
 	<key>OptionIsMetaForSpecialChars</key>
 	<false/>
 	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
+	<key>PasteSpecialRegex</key>
+	<string></string>
+	<key>PasteSpecialSubstitution</key>
+	<string></string>
+	<key>PasteSpecialUseRegexSubstitution</key>
 	<false/>
 	<key>PasteTabToStringTabStopSize</key>
 	<integer>2</integer>
