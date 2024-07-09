@@ -48,7 +48,6 @@ return {
     opts = {
       highlight = { enable = true },
       indent = { enable = true },
-      autotag = { enable = true }, -- enable autotagging (w/ nvim-ts-autotag plugin)
       ensure_installed = {
         "json",
         "javascript",
