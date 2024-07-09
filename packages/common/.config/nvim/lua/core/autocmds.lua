@@ -30,3 +30,10 @@ vim.api.nvim_create_autocmd("WinLeave", {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd("BufWrite", {
+  pattern = { "*.ts", "*.tsx", "*.js", "*.jsx" },
+  callback = function()
+    vim.cmd("TailwindSort")
+  end,
+})
