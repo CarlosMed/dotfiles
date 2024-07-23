@@ -18,6 +18,8 @@
 	<integer>20</integer>
 	<key>CheckTestRelease</key>
 	<false/>
+	<key>ClickToSelectCommand</key>
+	<true/>
 	<key>CloseBookmarksWindowAfterOpening</key>
 	<true/>
 	<key>ConvertDosNewlines</key>

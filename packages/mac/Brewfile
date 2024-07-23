@@ -23,6 +23,9 @@ brew 'eza'
 
 # Dev
 brew 'git'
+brew 'pnpm'
+brew 'yarn'
+brew 'ngrok/ngrok/ngrok'
 brew 'neovim'
 brew 'tmux'
 brew 'lazygit'
