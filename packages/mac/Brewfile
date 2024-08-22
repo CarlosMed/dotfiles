@@ -23,6 +23,7 @@ brew 'eza'
 
 # Dev
 brew 'git'
+brew 'delta'
 brew 'pnpm'
 brew 'yarn'
 brew 'ngrok/ngrok/ngrok'
