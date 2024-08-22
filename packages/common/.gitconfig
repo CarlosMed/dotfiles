@@ -1,0 +1,24 @@
+[user]
+	name = Carlos Medina
+  email = carlos.w.med@gmail.com
+
+[color]
+	ui = true
+
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = nvim
+
+[init]
+	defaultBranch = main
+
+[fetch]
+	prune = true
