@@ -9,4 +9,7 @@ keybinding:
 git:
   paging:
     colorArg: always
-    pager: delta --dark --paging=never
+    # useConfig: false
+    pager: delta --dark --paging=never --syntax-theme base16-256 --diff-so-fancy -s # (-s for split)
+os:
+  editPreset: "nvim"
