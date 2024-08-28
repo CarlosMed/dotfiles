@@ -16,12 +16,12 @@ return {
     },
   },
   opts = {
-    format = {
-      -- timeout_ms = 1000,
-      async = true,
-      quite = false,
-      lsp_fallback = true,
-    },
+    -- format = {
+    --   -- timeout_ms = 1000,
+    --   async = true,
+    --   quite = false,
+    --   lsp_fallback = true,
+    -- },
     formatters_by_ft = {
       javascript = { { "prettierd", "prettier" } },
       typescript = { { "prettierd", "prettier" } },
@@ -36,10 +36,10 @@ return {
       graphql = { { "prettierd", "prettier" } },
       lua = { "stylua" },
     },
-    format_after_save = {
+    format_on_save = {
       lsp_fallback = true,
       async = true,
-      -- timeout_ms = 500,
+      timeout_ms = 500,
     },
     formatters = {
       injected = { options = { ignore_errors = true } },

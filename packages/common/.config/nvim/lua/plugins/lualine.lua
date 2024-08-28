@@ -2,7 +2,7 @@ local lazy_status = require("lazy.status")
 -- local icons = require("null.util")
 
 return {
-  { "AndreM222/copilot-lualine" },
+  -- { "AndreM222/copilot-lualine" },
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
@@ -91,7 +91,7 @@ return {
           -- },
         },
         lualine_y = {
-          { "copilot", show_colors = true },
+          -- { "copilot", show_colors = true },
           { "progress", separator = " ", padding = { left = 1, right = 0 } },
           { "location", padding = { left = 0, right = 1 } },
         },
