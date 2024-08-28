@@ -5,8 +5,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # zmodload zsh/zprof        # Used to measure ZSH performance
 user="$(whoami)"
 custom=$HOME/Code/dotfiles/packages/common/.oh-my-zsh/custom
@@ -72,7 +70,7 @@ ZSH_CUSTOM=$custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z asdf zsh-autosuggestions zsh-syntax-highlighting tmux)
+plugins=(git z zsh-autosuggestions zsh-syntax-highlighting tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,7 +106,7 @@ source $ZSH_CUSTOM/alias.zsh
 
 #Exports
 export XDG_CONFIG_HOME=/Users/carlos.medina/.config
-export PATH="$PATH:/usr/local/sbin:/opt/nvim-linux64/bin"
+export PATH="/usr/local/sbin:/opt/nvim-linux64/bin:$HOME/.volta/bin:$PATH"
 export BAT_THEME="gruvbox-dark"
 
 # # .zshrc
@@ -141,11 +139,8 @@ git_develop_branch() {
   echo dev
 }
 
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
 
 PATH=~/.console-ninja/.bin:$PATH
