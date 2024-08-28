@@ -74,6 +74,7 @@ cask 'zoom'
 
 # Fonts
 cask 'font-fira-code-nerd-font'
+cask 'font-hack-nerd-font'
 
 # Mac App Store
 # mas 'velja', id: 1607635845
