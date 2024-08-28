@@ -13,7 +13,7 @@ brew 'grep'
 brew 'httpie'
 brew 'jq' # command-line JSON processor
 brew 'mackup'
-brew 'mas' # Mac App Store manager
+# brew 'mas' # Mac App Store manager
 brew 'pkg-config'
 brew 'stow'
 brew 'tree'
@@ -38,7 +38,6 @@ cask 'alt-tab'
 cask 'appcleaner'
 cask 'arc'
 cask 'bartender'
-cask 'beardedspice'
 cask 'browserosaurus'
 cask 'caffeine'
 cask 'dbngin'
@@ -55,7 +54,6 @@ cask 'itsycal'
 cask 'monitorcontrol'
 cask 'postman'
 cask 'private-internet-access'
-cask 'qlmarkdown'
 cask 'quicklook-json'
 cask 'raycast'
 cask 'rectangle'
@@ -76,9 +74,9 @@ cask 'zoom'
 cask 'font-fira-code-nerd-font'
 
 # Mac App Store
-mas 'velja', id: 1607635845
-mas 'sequel-ace', id: 1518036000
-mas 'Keynote', id: 409183694
-mas 'Numbers', id: 409203825
-mas 'pages', id: 409201541
-mas 'xcode', id: 497799835
+# mas 'velja', id: 1607635845
+# mas 'sequel-ace', id: 1518036000
+# mas 'Keynote', id: 409183694
+# mas 'Numbers', id: 409203825
+# mas 'pages', id: 409201541
+# mas 'xcode', id: 497799835
