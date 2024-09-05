@@ -1,5 +1,7 @@
 return {
-  "hrsh7th/nvim-cmp", -- Autocompletion
+  -- "hrsh7th/nvim-cmp", -- Autocompletion
+  "yioneko/nvim-cmp", -- Autocompletion
+  branch = "perf",
   version = false,
   event = { "BufReadPost", "BufWritePost", "BufNewFile" },
   dependencies = {
