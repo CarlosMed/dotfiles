@@ -116,7 +116,7 @@ fi
 source $ZSH_CUSTOM/alias.zsh
 
 #Exports
-export XDG_CONFIG_HOME=/Users/carlos.medina/.config
+export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="/usr/local/sbin:/opt/nvim-linux64/bin:$HOME/.volta/bin:$PATH"
 export BAT_THEME="gruvbox-dark"
 
@@ -152,6 +152,3 @@ git_develop_branch() {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
-PATH=~/.console-ninja/.bin:$PATH
