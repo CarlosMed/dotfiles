@@ -1,16 +1,15 @@
 ttf-dejavu
 
 git 
- openssh
+openssh
 
 firefox
 zsh
 xclip
-vim
+neovim
 rxvt-unicode
 feh
 adobe-source-code-pro-fonts
 stow
 tree
-unzip
 unzip
