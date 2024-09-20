@@ -15,7 +15,7 @@ alias huh="alias | grep"
 alias lip="ipconfig getifaddr en0"
 alias reboot="_ reboot"
 alias shutdown="_ shutdown"
-alias trash="npx trash-cli"
+alias trash="trash-put"
 alias tup="tmux source-file ~/.config/tmux/tmux.conf"
 
 # Recursively delete `.DS_Store` files
@@ -45,3 +45,5 @@ alias path='echo -e ${PATH//:/\\n}'
 alias searchmodules='find . -name "node_modules" -type d -prune -print | xargs du -chs'
 alias purgemodules="find . -name "node_modules" -type d -prune -print -exec rm -rf '{}' \;"
 # alias ls='eza --color=always --icons=always --long --git --no-filesize --no-time --no-user --no-permissions'
+
+alias temp='curl https://wttr.in'

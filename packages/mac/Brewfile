@@ -16,6 +16,7 @@ brew 'mackup'
 # brew 'mas' # Mac App Store manager
 brew 'pkg-config'
 brew 'stow'
+brew 'trash-cli'
 brew 'tree'
 brew 'ripgrep'
 brew 'fzf'
