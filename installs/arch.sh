@@ -66,11 +66,11 @@ arch () {
 	# stow -n -t ~/ common --ignore=".oh-my-zsh" -v # Mock Stow
 
 	# Installing Missing Submodules 
-	printf "%s" $yellow
+	printf "%s\n" $yellow
 	echo "#########################"
 	echo "###     Installing    ###"
 	echo "###     Submodules    ###"
-	echo "#########################"
+	echo "#########################\n"
 
 	git submodule update --init --recursive
 	printf "%sSubmodules complete\n" $green
