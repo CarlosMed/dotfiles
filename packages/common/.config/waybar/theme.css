@@ -17,7 +17,6 @@
 @define-color white	#ebdbb2;
 @define-color bg2	#504945;
 
-
 @define-color warning 	@bryellow;
 @define-color critical	@red;
 @define-color mode	@black;
@@ -33,3 +32,13 @@
 @define-color battery	@aqua;
 @define-color date	@black;
 @define-color time	@white;
+
+@define-color base #282828;
+@define-color foreground #ebdbb2;
+@define-color cyan #83a598;
+@define-color green #8ec07c;
+@define-color orange #fe8019;
+@define-color pink #d3869b;
+@define-color purple #b16286;
+@define-color red #fb4934;
+@define-color yellow #fabd2f;

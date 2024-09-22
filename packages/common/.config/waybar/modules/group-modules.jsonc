@@ -1,0 +1,39 @@
+{
+  "group/hardware": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 300,
+      "children-class": "not-memory",
+      "transition-left-to-right": true
+    },
+    "modules": [
+      "network",
+      "disk",
+      "cpu",
+      "memory",
+      "temperature",
+      "hyprland/language"
+    ]
+  },
+  "group/time": {
+    "orientation": "inherit",
+    "modules": [
+      "custom/weather",
+      "clock"
+    ]
+  },
+  "group/controls": {
+    "orientation": "inherit",
+    "modules": [
+      "bluetooth",
+      "pulseaudio"
+    ]
+  },
+  "group/power": {
+    "orientation": "inherit",
+    "modules": [
+      "idle_inhibitor",
+      "custom/power"
+    ]
+  }
+}
