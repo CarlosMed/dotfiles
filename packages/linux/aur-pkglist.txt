@@ -1,0 +1,5 @@
+downgrade
+google-chrome
+rofi-power-menu
+zen-browser-bin
+zoom

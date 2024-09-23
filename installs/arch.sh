@@ -10,7 +10,8 @@ arch () {
 	echo $nl
 	sleep 3
 
-	# Installing Homebrew
+
+	# Installing Packages
 	printf "%s" $yellow
 	echo "#########################"
 	echo "### Installing Linux  ###"
@@ -19,7 +20,7 @@ arch () {
 
 	printf "%s\n" $green
 	echo "Installing Packages..."
-	sudo pacman -S - < $dot/packages/linux/pkglist.txt
+	sudo pacman -S --needed - < $home/Code/dotfiles/packages/linux/pkglist.txt 
 
 	# Installing oh-my-zsh
 	printf "%s\n" $yellow
@@ -37,26 +38,52 @@ arch () {
 		echo "Oh My ZSH already installed"
 	fi
 
+	# Installing Missing Submodules 
+	printf "%s\n" $yellow
+	echo "#########################"
+	echo "###     Installing    ###"
+	echo "###     Submodules    ###"
+	echo "#########################"
+
+	git submodule update --init --recursive
+	printf "%s\nSubmodules complete\n" $green
+
+	# Installing Yay
+	# printf "%s" $yellow
+	# echo "#########################"
+	# echo "###  Installing Yay   ###"
+	# echo "###    AUR Manager    ###"
+	# echo "#########################"
+	
+	# echo "Creating and navigating to temp folder\n"
+	# cd $home
+	# mkdir tmp
+	# cd tmp
+	# echo "Clonning and installing yay\n"
+	# git clone https://aur.archlinux.org/yay.git
+	# cd yay
+	# makepkg -si
+	
 	# Preparing Dotfiles
 	printf "%s\n" $yellow
 	echo 	"#########################"
 	echo 	"###     Setting up    ###"
 	echo	"###      Dotfiles     ###"
-	echo -e "#########################\n" $normal
+	echo -e "#########################" $normal
 
 	# Removing .zshrc .oh-my-zsh/custom/* .vimrc
-	printf "%sRemoving .vimrc, .zshrc, .gitignore .tmux.conf .vim .nvim\n" $red
+	printf "%s\nRemoving .vimrc, .zshrc, .gitignore .tmux.conf .vim .nvim\n" $red
 
-	rm -rfv $home/.vimrc $home/.zshrc $home/.gitignore $home/.tmux.conf $home/.vim $home/.config/nvim
+	rm -rfv $home/.vimrc $home/.zshrc $home/.gitignore $home/.tmux.conf $home/.vim $home/.config/nvim $home/.config/hypr $home/.config/kitty
 
 	# Stowing Dotfiles
 	printf "%s\n" $yellow
 	echo 	"#########################"
 	echo 	"###  Stowing Dotfiles ###"
-	echo -e "#########################\n" $normal
+	echo -e "#########################" $normal
 
 	# Cd'ing into Code folder
-	printf "%sNavigating into $dot directory\n\n" $green
+	printf "%s\nNavigating into $dot directory\n\n" $green
 	cd $dot
 	sleep 2
 
@@ -65,17 +92,7 @@ arch () {
 	stow .
 	# stow -n -t ~/ common --ignore=".oh-my-zsh" -v # Mock Stow
 
-	# Installing Missing Submodules 
-	printf "%s\n" $yellow
-	echo "#########################"
-	echo "###     Installing    ###"
-	echo "###     Submodules    ###"
-	echo "#########################\n"
-
-	git submodule update --init --recursive
-	printf "%sSubmodules complete\n" $green
-
-	printf $blue
+	printf "\n" $blue
 	echo "*******************************"
 	echo "     Installation Complete     "
 	echo "           For $os             "
@@ -84,7 +101,7 @@ arch () {
 
 	printf "%sPlease review below to make sure all stowed links are correct...\n" $green
 
-	printf "%sHome Directory\n" $green
+	printf "%s\nHome Directory\n" $green
 	# LS'ing home directory
 	echo $nl
 	ls -la $home
