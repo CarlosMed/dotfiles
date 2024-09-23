@@ -46,23 +46,34 @@ arch () {
 	echo "#########################"
 
 	git submodule update --init --recursive
-	printf "%s\nSubmodules complete\n" $green
+	printf "%s\nSubmodules complete\n\n" $green
 
 	# Installing Yay
-	# printf "%s" $yellow
-	# echo "#########################"
-	# echo "###  Installing Yay   ###"
-	# echo "###    AUR Manager    ###"
-	# echo "#########################"
+	printf "%s" $yellow
+	echo "#########################"
+	echo "###  Installing Yay   ###"
+	echo "###    AUR Manager    ###"
+	echo "#########################"
 	
-	# echo "Creating and navigating to temp folder\n"
-	# cd $home
-	# mkdir tmp
-	# cd tmp
-	# echo "Clonning and installing yay\n"
-	# git clone https://aur.archlinux.org/yay.git
-	# cd yay
-	# makepkg -si
+	printf "%s\nCreating and navigating to temp folder\n" $yellow
+	echo ""
+	cd $home
+	mkdir tmp
+	cd tmp
+
+	printf "%s\nClonning and installing yay\n\n" $yellow
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
+	makepkg -si
+
+	printf "%s" $yellow
+	echo "#########################"
+	echo "###  Installing Yay   ###"
+	echo "###     Packages      ###"
+	echo "#########################"
+
+	sudo yay --needed - < $home/Code/dotfiles/packages/linux/aur-pkglist.txt 
+	printf "%s\nYay installation complete.\n\n" $yellow
 	
 	# Preparing Dotfiles
 	printf "%s\n" $yellow
