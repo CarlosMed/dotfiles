@@ -17,6 +17,7 @@ arch () {
 	echo "### Installing Linux  ###"
 	echo "###     Packages      ###"
 	echo "#########################"
+	sleep 5
 
 	printf "%s\n" $green
 	echo "Installing Packages..."
@@ -28,6 +29,7 @@ arch () {
 	echo "###     Installing    ###"
 	echo "###     oh-my-zsh     ###"
 	echo "#########################"
+	sleep 5
 
 	printf "%s\n" $green
 	if ! $(test -d "$home/.oh-my-zsh"); then
@@ -44,6 +46,7 @@ arch () {
 	echo "###     Installing    ###"
 	echo "###     Submodules    ###"
 	echo "#########################"
+	sleep 5
 
 	git submodule update --init --recursive
 	printf "%s\nSubmodules complete\n\n" $green
@@ -54,8 +57,9 @@ arch () {
 	echo "###  Installing Yay   ###"
 	echo "###    AUR Manager    ###"
 	echo "#########################"
+	sleep 5
 	
-	printf "%s\nCreating and navigating to temp folder\n" $yellow
+	printf "%s\nCreating and navigatting to temp folder\n" $yellow
 	echo ""
 	cd $home
 	mkdir tmp
@@ -66,14 +70,16 @@ arch () {
 	cd yay
 	makepkg -si
 
-	printf "%s" $yellow
+	printf "%s\n" $yellow
 	echo "#########################"
 	echo "###  Installing Yay   ###"
 	echo "###     Packages      ###"
 	echo "#########################"
+	sleep 5
 
-	sudo yay --needed - < $home/Code/dotfiles/packages/linux/aur-pkglist.txt 
-	printf "%s\nYay installation complete.\n\n" $yellow
+	printf "%s\n" $yellow
+	yay --needed - < $home/Code/dotfiles/packages/linux/aur-pkglist.txt 
+	printf "%s\nYay installation complete.\n" $yellow
 	
 	# Preparing Dotfiles
 	printf "%s\n" $yellow
@@ -81,6 +87,7 @@ arch () {
 	echo 	"###     Setting up    ###"
 	echo	"###      Dotfiles     ###"
 	echo -e "#########################" $normal
+	sleep 5
 
 	# Removing .zshrc .oh-my-zsh/custom/* .vimrc
 	printf "%s\nRemoving .vimrc, .zshrc, .gitignore .tmux.conf .vim .nvim\n" $red
@@ -90,8 +97,10 @@ arch () {
 	# Stowing Dotfiles
 	printf "%s\n" $yellow
 	echo 	"#########################"
-	echo 	"###  Stowing Dotfiles ###"
+	echo 	"###      Stowing      ###"
+	echo 	"###      Dotfiles     ###"
 	echo -e "#########################" $normal
+	sleep 5
 
 	# Cd'ing into Code folder
 	printf "%s\nNavigating into $dot directory\n\n" $green
@@ -103,7 +112,26 @@ arch () {
 	stow .
 	# stow -n -t ~/ common --ignore=".oh-my-zsh" -v # Mock Stow
 
-	printf "\n" $blue
+	# Configuring nvidia drivers
+	printf "%s\n" $yellow
+	echo 	"#########################"
+	echo 	"###    Setting Up     ###"
+	echo 	"###   Nvidia Drivers  ###"
+	echo -e "#########################" $normal
+	sleep 5
+
+	printf "%s\nNvidia.conf creationg completed\n" $yellow
+	sudo tee /etc/modprobe.d/nvidia.conf <<EOF
+options nvidia_drm modeset=1 fbdev=1
+EOF
+	sleep 5
+	
+printf "%s\n\nPlease make sure to add MODULES(... nvidia nvidia_modeset nvidia_uvm nvidia_drm ...) to /etc/mkinitcpio.conf\n" $red
+
+printf "%s\n\nOnce done please run sudo mkinitcpio -P\n" $red
+	sleep 8
+
+	printf "%s\n" $blue
 	echo "*******************************"
 	echo "     Installation Complete     "
 	echo "           For $os             "
@@ -111,24 +139,25 @@ arch () {
 	echo $nl
 
 	printf "%sPlease review below to make sure all stowed links are correct...\n" $green
+	sleep 5
 
 	printf "%s\nHome Directory\n" $green
 	# LS'ing home directory
 	echo $nl
 	ls -la $home
-	sleep 3
+	sleep 8
 
 	printf "%s\n.config Directory\n" $green
 	# LS'ing home directory
 	echo $nl
 	ls -la $home/.config
 	cd $home
-	sleep 3
+	sleep 8
 
 	# Sourcing zsh to restart the shell
 	printf "%s\nRestarting shell...\n\n" $green
 	echo $nl
 
-	sleep 2
+	sleep 3
 	exec zsh
 }
