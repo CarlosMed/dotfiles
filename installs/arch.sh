@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# TODO: move bigger scripts into individual scripts
 # Installation Functions
 arch () {
 	printf $blue
@@ -23,6 +24,7 @@ arch () {
 	echo "Installing Packages..."
 	sudo pacman -S --needed - < $home/Code/dotfiles/packages/linux/pkglist.txt 
 
+
 	# Installing oh-my-zsh
 	printf "%s\n" $yellow
 	echo "#########################"
@@ -40,6 +42,7 @@ arch () {
 		echo "Oh My ZSH already installed"
 	fi
 
+
 	# Installing Missing Submodules 
 	printf "%s\n" $yellow
 	echo "#########################"
@@ -50,6 +53,7 @@ arch () {
 
 	git submodule update --init --recursive
 	printf "%s\nSubmodules complete\n\n" $green
+
 
 	# Installing Yay
 	printf "%s" $yellow
@@ -70,6 +74,7 @@ arch () {
 	cd yay
 	makepkg -si
 
+
 	printf "%s\n" $yellow
 	echo "#########################"
 	echo "###  Installing Yay   ###"
@@ -80,6 +85,7 @@ arch () {
 	printf "%s\n" $yellow
 	yay --needed - < $home/Code/dotfiles/packages/linux/aur-pkglist.txt 
 	printf "%s\nYay installation complete.\n" $yellow
+	
 	
 	# Preparing Dotfiles
 	printf "%s\n" $yellow
@@ -92,7 +98,9 @@ arch () {
 	# Removing .zshrc .oh-my-zsh/custom/* .vimrc
 	printf "%s\nRemoving .vimrc, .zshrc, .gitignore .tmux.conf .vim .nvim\n" $red
 
+	# TODO: find a way to reduce this by deleting multiple instances in one
 	rm -rfv $home/.vimrc $home/.zshrc $home/.gitignore $home/.tmux.conf $home/.vim $home/.config/nvim $home/.config/hypr $home/.config/kitty
+
 
 	# Stowing Dotfiles
 	printf "%s\n" $yellow
@@ -112,6 +120,54 @@ arch () {
 	stow .
 	# stow -n -t ~/ common --ignore=".oh-my-zsh" -v # Mock Stow
 
+
+	# Configuring nvidia drivers
+	printf "%s\n" $yellow
+	echo 	"#########################"
+	echo 	"###   Please Review   ###"
+	echo 	"###     Symlinks      ###"
+	echo -e "#########################" $normal
+	sleep 5
+
+	printf "%sPlease review below to make sure all stowed links are correct...\n" $green
+	sleep 5
+
+	printf "%s\nHome Directory\n" $green
+	# LS'ing home directory
+	echo $nl
+	ls -la $home
+	sleep 8
+
+	printf "%s\n.config Directory\n" $green
+	# LS'ing home directory
+	echo $nl
+	ls -la $home/.config
+	cd $home
+	sleep 8
+
+
+	# TODO: make the dualboot process optional
+	# Configuring nvidia drivers
+	printf "%s\n" $yellow
+	echo 	"#########################"
+	echo 	"###    Setting Up     ###"
+	echo 	"###    Dual Boot      ###"
+	echo -e "#########################" $normal
+	sleep 5
+	
+	printf "%s\nInstalling Grub items for dualboot\n" $green
+	sudo pacman -Sy grub efibootmgr dosfstools mtools
+
+	printf "%s\nSetting up grub...\n\n" $green
+	sudo grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+
+	printf "%s\n\n" $green
+	sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+	printf "%s\nNavigate to /etc/default/grub and uncomment GRUB_DISABLE_OS\n" $red
+	printf "%s\nOnce done please run sudo grub-mkconfig -o /boot/grub/grub.cfg again\n" $red
+	sleep 8
+	
 	# Configuring nvidia drivers
 	printf "%s\n" $yellow
 	echo 	"#########################"
@@ -131,28 +187,14 @@ printf "%s\n\nPlease make sure to add MODULES(... nvidia nvidia_modeset nvidia_u
 printf "%s\n\nOnce done please run sudo mkinitcpio -P\n" $red
 	sleep 8
 
+
 	printf "%s\n" $blue
 	echo "*******************************"
-	echo "     Installation Complete     "
-	echo "           For $os             "
+	echo "       Full Installation       "
+	echo "       Complete For $os        "
 	echo "*******************************"
 	echo $nl
-
-	printf "%sPlease review below to make sure all stowed links are correct...\n" $green
-	sleep 5
-
-	printf "%s\nHome Directory\n" $green
-	# LS'ing home directory
-	echo $nl
-	ls -la $home
-	sleep 8
-
-	printf "%s\n.config Directory\n" $green
-	# LS'ing home directory
-	echo $nl
-	ls -la $home/.config
-	cd $home
-	sleep 8
+	printf "%s\nRestart once complete after all instructions above are done\n\n" $green
 
 	# Sourcing zsh to restart the shell
 	printf "%s\nRestarting shell...\n\n" $green
