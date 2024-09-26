@@ -176,9 +176,14 @@ arch () {
 	echo -e "#########################" $normal
 	sleep 5
 
+	printf "%s\nEnabling Nvidia systemctl for suspend, hibernate, and resume...\n" $yellow
+	systemctl enable nvidia-hibernate.service nvidia-resume.service nvidia-suspend.service
+
 	printf "%s\nNvidia.conf creationg completed\n" $yellow
 	sudo tee /etc/modprobe.d/nvidia.conf <<EOF
 options nvidia_drm modeset=1 fbdev=1
+options nvidia NVreg_PreserveVideoMemoryAllocations=1
+options nvidia NVreg_TemporaryFilePath=/var/tmp
 EOF
 	sleep 5
 	
