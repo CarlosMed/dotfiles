@@ -148,7 +148,6 @@ tooltip label {
 #temperature,
 #backlight,
 #network,
-#pulseaudio,
 #wireplumber,
 #tray,
 #mode,
@@ -156,16 +155,17 @@ tooltip label {
 #mpd,
 #language,
 #keyboard-state,
-#bluetooth,
 #time,
 #power,
 #hardware,
+#controls,
 #custom-media {
   padding: 0 18px;
   background-color: @base;
   border-radius: 100px;
 }
 
+#bluetooth,
 #idle_inhibitor,
 #custom-weather {
   padding-right: 18px;
