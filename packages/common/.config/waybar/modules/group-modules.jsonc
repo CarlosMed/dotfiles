@@ -32,8 +32,12 @@
   "group/power": {
     "orientation": "inherit",
     "modules": [
-      "idle_inhibitor",
-      "custom/power"
+    "backlight",
+    "battery",
+    "power-profile",
+    "power-profiles-daemon",
+    "idle_inhibitor",
+    "custom/power",
     ]
   }
 }

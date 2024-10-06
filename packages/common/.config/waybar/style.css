@@ -141,12 +141,10 @@ tooltip label {
   text-shadow: none;
 }
 
-#battery,
 #cpu,
 #memory,
 #disk,
 #temperature,
-#backlight,
 #network,
 #wireplumber,
 #tray,
@@ -160,15 +158,24 @@ tooltip label {
 #hardware,
 #controls,
 #custom-media {
-  padding: 0 18px;
+  padding: 0 12px;
   background-color: @base;
   border-radius: 100px;
 }
 
+#hardware {
+  padding: 0 0;
+}
+
+#battery {
+  padding-right: 18px;
+}
+
+#backlight,
 #bluetooth,
 #idle_inhibitor,
 #custom-weather {
-  padding-right: 18px;
+  padding-right: 12px;
 }
 
 #clock,
@@ -191,7 +198,6 @@ tooltip label {
 #cpu,
 #disk,
 #memory,
-#battery,
 #temperature,
 #custom-media,
 #custom-media.custom-vlc,
@@ -206,6 +212,7 @@ tooltip label {
   color: @cyan;
 }
 
+#battery,
 #backlight,
 #scratchpad,
 #idle_inhibitor,
@@ -249,7 +256,6 @@ label:focus {
 }
 
 #battery.critical:not(.charging) {
-  background-color: @red;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -259,7 +265,6 @@ label:focus {
 
 @keyframes blink {
   to {
-    background-color: @base;
-    color: #000000;
+    color: @red;
   }
 }

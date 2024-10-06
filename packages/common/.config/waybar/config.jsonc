@@ -10,26 +10,24 @@
     "~/.config/waybar/modules/custom-modules.jsonc"
   ],
   "modules-left": [
-    "sway/mode",
-    "sway/scratchpad",
+    "hyprland/submap",
     "custom/media",
     "tray",
     "group/hardware"
   ],
   "modules-center": [
+    // "sway/scratchpad",
     // "hyprland/window",
-    "hyprland/workspaces"
+    "hyprland/workspaces",
   ],
   "modules-right": [
-    "group/controls",
-    "battery",
     "mpd",
+    "group/controls",
     "group/time",
     "power-profiles-daemon",
-    "backlight",
     "keyboard-state",
     "sway/language",
     "battery#bat2",
-    "group/power"
+    "group/power",
   ]
 }
