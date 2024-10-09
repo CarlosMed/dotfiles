@@ -1,5 +1,7 @@
 downgrade
 google-chrome
 rofi-power-menu
+slack-desktop
+volta
 zen-browser-bin
 zoom
