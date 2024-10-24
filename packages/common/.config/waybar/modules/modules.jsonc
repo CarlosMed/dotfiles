@@ -64,25 +64,25 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "calendar": {
       "weeks-pos": "right",
-      "mode"          : "year",
-      "mode-mon-col"  : 3,
-      "on-scroll"     : 1,
+      "mode": "year",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
       "on-click-right": "mode",
       "format": {
-      "months":     "<span color='#ffead3'><b>{}</b></span>",
-      "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-      "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-      "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-      "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
       }
     },
-    "actions":  {
+    "actions": {
       "on-click-right": "mode",
       "on-click-forward": "tz_up",
       "on-click-backward": "tz_down",
       "on-scroll-up": "shift_up",
       "on-scroll-down": "shift_down"
-                }
+    }
     // "format-alt": "{:%Y-%m-%d}"
   },
   "cpu": {
@@ -120,12 +120,13 @@
     ]
   },
   "bluetooth": {
-    "format": "",
+    "format": "",
     "format-disabled": "", // an empty format will hide the module
     "format-connected": " {num_connections}",
     "tooltip-format": " {device_alias}",
     "tooltip-format-connected": "{device_enumerate}",
-    "tooltip-format-enumerate-connected": " {device_alias}"
+    "tooltip-format-enumerate-connected": " {device_alias}",
+    "on-click-right": "bluetoothctl connect 40:ED:CF:D7:D7:30"
   },
   "network": {
     // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -158,6 +159,7 @@
       ]
     },
     "on-click": "pavucontrol",
+    "on-click-right": "$(wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle)",
     "max-volume": 100
   },
   "keyboard-state": {
@@ -172,7 +174,7 @@
   "hyprland/window": {
     "format": "{}",
     "max-length": 36,
-    "separate-outputs": true,
+    "separate-outputs": true
   },
   "hyprland/mode": {
     "format": "<span style=\"italic\">{}</span>"

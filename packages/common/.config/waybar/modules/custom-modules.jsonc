@@ -5,7 +5,7 @@
   },
   "custom/weather": {
     "format": "{}",
-    "interval": 300,
+    "interval": 1800,
     "exec": "curl https://wttr.in/?format=1"
   },
   "custom/media": {
