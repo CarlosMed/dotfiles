@@ -120,6 +120,8 @@ source $ZSH_CUSTOM/alias.zsh
 export XDG_CONFIG_HOME="$HOME/.config"
 export PATH="/usr/local/sbin:/opt/nvim-linux64/bin:$HOME/.volta/bin:$PATH"
 export BAT_THEME="gruvbox-dark"
+export MANPAGER="nvim --clean +Man!"
+# export MANPAGER="less -R --use-color -Dd+r -Du+b" # → Use less for man syntax highlighting:
 
 # # .zshrc
 # zprof # ZSH Performance End
