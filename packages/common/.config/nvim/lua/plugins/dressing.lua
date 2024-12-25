@@ -15,7 +15,8 @@ return {
         if opts.kind == "codeaction" then
           -- Cute and compact code action menu.
           return {
-            backend = "builtin",
+            backend = { "telescope", "fzf_lua", "fzf", "builtin", "nui" },
+            -- backend = "builtin",
             builtin = {
               relative = "cursor",
               max_height = 0.33,
