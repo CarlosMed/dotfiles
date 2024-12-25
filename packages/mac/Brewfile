@@ -21,6 +21,7 @@ brew 'tree'
 brew 'ripgrep'
 brew 'fzf'
 brew 'eza'
+brew 'fd'
 
 # Dev
 brew 'git'
