@@ -26,9 +26,17 @@ return {
       html = { "prettierd", "prettier", stop_after_first = true },
       json = { "prettierd", "prettier", stop_after_first = true },
       yaml = { "prettierd", "prettier", stop_after_first = true },
-      markdown = { "prettierd", "prettier", stop_after_first = true },
+      markdown = { "cbfmt", "prettierd", "prettier", "markdownlint", stop_after_first = true },
       graphql = { "prettierd", "prettier", stop_after_first = true },
       lua = { "stylua" },
+      htmlangular = { "prettierd" },
+      jsonc = { "prettierd" },
+      scss = { "prettierd" },
+      vue = { "prettierd" },
+      fish = { "fish_indent" },
+      sh = { "shfmt", "shellharden" },
+      bash = { "shfmt", "shellharden" },
+      go = { "goimports", "gofumpt" }, -- gofmt, gomodifytags
     },
     format_on_save = {
       lsp_fallback = true,

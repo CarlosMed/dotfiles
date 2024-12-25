@@ -36,7 +36,6 @@ return {
 
     -- Additional lua configuration, makes nvim stuff amazing!
     { "antosha417/nvim-lsp-file-operations", config = true },
-    { "folke/neodev.nvim", opts = {} },
     { "folke/neoconf.nvim", cmd = "Neoconf", config = false },
 
     -- Useful status updates for LSP
@@ -93,8 +92,15 @@ return {
     end
 
     local servers = {
+      bashls = {},
       custom_elements_ls = {},
-      emmet_language_server = {},
+      cssls = {},
+      docker_compose_language_service = {},
+      dockerls = {},
+      -- emmet_language_server = {},
+      emmet_ls = {},
+      -- golangci_lint_ls = {},
+      -- gopls = {},
       html = {
         filetypes = { "html", "twig", "hbs", "tsx" },
       },
@@ -108,8 +114,40 @@ return {
           },
         },
       },
+      marksman = {},
+      sqlls = {},
       tailwindcss = {},
-      tsserver = {},
+      volar = {
+        filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+        init_options = {
+          vue = {
+            hybridMode = false,
+          },
+        },
+        settings = {
+          typescript = {
+            inlayHints = {
+              enumMemberValues = {
+                enabled = true,
+              },
+              functionLikeReturnTypes = {
+                enabled = true,
+              },
+              propertyDeclarationTypes = {
+                enabled = true,
+              },
+              parameterTypes = {
+                enabled = true,
+                suppressWhenArgumentMatchesName = true,
+              },
+              variableTypes = {
+                enabled = true,
+              },
+            },
+          },
+        },
+      },
+      yamlls = {},
     }
 
     -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
