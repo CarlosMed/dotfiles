@@ -42,8 +42,10 @@ return {
             { action = "ene | startinsert",                                        desc = " New file",        icon = " ", key = "n" },
             { action = "Telescope oldfiles",                                       desc = " Recent files",    icon = " ", key = "r" },
             { action = "Telescope live_grep",                                      desc = " Find text",       icon = " ", key = "g" },
-            { action = "Telescope find_files cwd=~/.config/nvim" ,        desc = " Config",          icon = " ", key = "c" },
+            { action = "Telescope find_files cwd=~/.config/nvim" ,                 desc = " Config",          icon = " ", key = "c" },
+            { action = "Leet",                                                     desc = " Leet Code",       icon = " ", key = "t" },
             { action = "Lazy",                                                     desc = " Lazy",            icon = "󰒲 ", key = "l" },
+            { action = "Mason",                                                    desc = " Mason",           icon = " ", key = "m" },
             { action = "qa",                                                       desc = " Quit",            icon = " ", key = "q" },
           },
         footer = function()
