@@ -35,11 +35,22 @@ return {
       --   theme = "dropdown",
       -- },
     },
+    borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+    color_devicons = true,
     defaults = {
       file_ignore_patterns = { "node_modules", "lazy-lock.json", ".git/" },
       dynamic_preview_title = true,
       -- path_display = { "smart" },
       path_display = { "filename_first" },
+      ripgrep_arguments = {
+        "rg",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--smart-case",
+      },
       mappings = {
         i = {
           ["<esc>"] = "close",
@@ -47,6 +58,9 @@ return {
           ["<C-k>"] = "move_selection_previous",
         },
       },
+      selection_strategy = "closest",
+      sorting_strategy = "descending",
+      layout_strategy = "horizontal",
       prompt_prefix = "  ",
       selection_caret = " ",
       -- open files in the first window that is an actual file.
