@@ -3,6 +3,7 @@ tap 'homebrew/cask'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
+tap 'FelixKratz/formulae'
 
 # Bins
 brew 'bat' # Better version of "cat" terminal command
@@ -19,6 +20,7 @@ brew 'mackup'
 # brew 'mas' # Mac App Store manager
 brew 'pkg-config'
 brew 'stow'
+brew 'sketchybar'
 brew 'ripgrep'
 brew 'trash-cli'
 brew 'tree'
@@ -56,6 +58,7 @@ cask 'iterm2'
 cask 'itsycal'
 cask 'karabiner-elements'
 cask 'monitorcontrol'
+cask 'nikitabobko/tap/aerospace'
 cask 'postman'
 cask 'polypane'
 cask 'private-internet-access'
@@ -63,6 +66,7 @@ cask 'quicklook-json'
 cask 'raycast'
 cask 'rectangle'
 cask 'shottr'
+cask 'stretchly'
 cask 'slack'
 cask 'soundsource'
 cask 'spline'
@@ -76,11 +80,14 @@ cask 'visual-studio-code'
 cask 'zoom'
 
 # Fonts
+cask 'sf-symbols'
 cask 'font-fira-code-nerd-font'
 cask 'font-hack-nerd-font'
+cask 'font-jetbrains-mono-nerd-font'
 
 # Mac App Store
 # mas 'velja', id: 1607635845
+# mas 'pandan', id: 1569600264
 # mas 'sequel-ace', id: 1518036000
 # mas 'Keynote', id: 409183694
 # mas 'Numbers', id: 409203825
