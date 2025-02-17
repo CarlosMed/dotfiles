@@ -4,6 +4,7 @@ local cr = "<cr>"
 return {
   -- Fuzzy Finder (files, lsp, etc)
   "nvim-telescope/telescope.nvim",
+  enabled = false,
   cmd = "Telescope",
   branch = "0.1.x",
   dependencies = {

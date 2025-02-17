@@ -54,18 +54,18 @@ return {
         vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc, noremap = true, silent = true })
       end
 
-      local tele_builtin = require("telescope.builtin")
+      -- local tele_builtin = require("telescope.builtin")
 
       nmap("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
       nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
 
       -- nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-      nmap("gd", tele_builtin.lsp_definitions, "[G]oto [D]efinition")
-      nmap("gr", tele_builtin.lsp_references, "[G]oto [R]eferences")
-      nmap("gI", tele_builtin.lsp_implementations, "[G]oto [I]mplementation")
-      nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
-      nmap("<leader>ds", tele_builtin.lsp_document_symbols, "[D]ocument [S]ymbols")
-      nmap("<leader>ws", tele_builtin.lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+      -- nmap("gd", tele_builtin.lsp_definitions, "[G]oto [D]efinition")
+      -- nmap("gr", tele_builtin.lsp_references, "[G]oto [R]eferences")
+      -- nmap("gI", tele_builtin.lsp_implementations, "[G]oto [I]mplementation")
+      -- nmap("<leader>D", vim.lsp.buf.type_definition, "Type [D]efinition")
+      -- nmap("<leader>ds", tele_builtin.lsp_document_symbols, "[D]ocument [S]ymbols")
+      -- nmap("<leader>ws", tele_builtin.lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
       -- See `:help K` for why this keymap
       nmap("K", vim.lsp.buf.hover, "Hover Documentation")

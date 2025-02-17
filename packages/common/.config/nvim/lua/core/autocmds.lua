@@ -23,13 +23,13 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 })
 
 -- Prevents nvim from opening in insert mode
-vim.api.nvim_create_autocmd("WinLeave", {
+--[[ vim.api.nvim_create_autocmd("WinLeave", {
   callback = function()
     if vim.bo.ft == "TelescopePrompt" and vim.fn.mode() == "i" then
       vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Esc>", true, false, true), "i", false)
     end
   end,
-})
+}) ]]
 
 vim.api.nvim_create_autocmd("BufWrite", {
   pattern = { "*.ts", "*.tsx", "*.js", "*.jsx" },
