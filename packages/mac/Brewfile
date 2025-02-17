@@ -5,10 +5,13 @@ tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 
 # Bins
-brew 'coreutils'
 brew 'bat' # Better version of "cat" terminal command
+brew 'coreutils'
 brew 'curl'
+brew 'eza'
+brew 'fd'
 brew 'ffmpeg' # Audio and Video Converter
+brew 'fzf'
 brew 'grep'
 brew 'httpie'
 brew 'jq' # command-line JSON processor
@@ -16,12 +19,9 @@ brew 'mackup'
 # brew 'mas' # Mac App Store manager
 brew 'pkg-config'
 brew 'stow'
+brew 'ripgrep'
 brew 'trash-cli'
 brew 'tree'
-brew 'ripgrep'
-brew 'fzf'
-brew 'eza'
-brew 'fd'
 
 # Dev
 brew 'git'
