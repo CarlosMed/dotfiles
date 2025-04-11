@@ -1,7 +1,7 @@
-after-startup-command = ['exec-and-forget sketchybar']
+after-startup-command = ['exec-and-forget /opt/homebrew/bin/sketchybar']
 
 # Notify Sketchybar about workspace change
-exec-on-workspace-change = ['/bin/bash', '-c', 'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE' ]
+exec-on-workspace-change = ['/bin/bash', '-c', 'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE', '--trigger aerospace_mode_change' ]
 
 # Start AeroSpace at login
 start-at-login = true
@@ -67,6 +67,10 @@ run = [ 'move-node-to-workspace o' ]
 
 [[on-window-detected]]
 if.app-name-regex-substring = 'discord'
+run = [ 'move-node-to-workspace o' ]
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'zoom.us'
 run = [ 'move-node-to-workspace o' ]
 
 [[on-window-detected]]
@@ -182,10 +186,6 @@ alt-shift-equal = 'resize smart +50'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace 1'
-alt-2 = 'workspace 2'
-alt-3 = 'workspace 3'
-alt-8 = 'workspace 8'
-alt-9 = 'workspace 9'
 alt-0 = 'workspace 0'
 alt-w = 'workspace w'
 alt-o = 'workspace o'
@@ -193,9 +193,7 @@ alt-p = 'workspace p'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 alt-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
-alt-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
-alt-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
-alt-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
+alt-shift-0 = 'move-node-to-workspace 0 --focus-follows-window'
 alt-shift-w = 'move-node-to-workspace w --focus-follows-window'
 alt-shift-o = 'move-node-to-workspace o --focus-follows-window'
 alt-shift-p = 'move-node-to-workspace p --focus-follows-window'
@@ -222,9 +220,7 @@ f = ['layout floating tiling', 'mode main'] # Toggle between floating and tiling
 backspace = ['close-all-windows-but-current', 'mode main']
 
 [workspace-to-monitor-force-assignment]
-1 = 'built-in'
-2 = 'built-in'
-3 = 'built-in'
+o = 'secondary'
 
 # [mode.apps.binding]
 # alt-w = ['exec-and-forget open -a /Applications/Kitty.app', 'mode main']
