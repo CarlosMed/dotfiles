@@ -118,7 +118,7 @@ source $ZSH_CUSTOM/alias.zsh
 
 #Exports
 export XDG_CONFIG_HOME="$HOME/.config"
-export PATH="/usr/local/sbin:/opt/nvim-linux64/bin:$HOME/.volta/bin:$PATH"
+export PATH="/usr/local/sbin:/opt/nvim-linux64/bin:$HOME/.volta/bin:$HOME/go/bin/:$PATH"
 export BAT_THEME="gruvbox-dark"
 export MANPAGER="nvim --clean +Man!"
 # export MANPAGER="less -R --use-color -Dd+r -Du+b" # → Use less for man syntax highlighting:
@@ -165,3 +165,10 @@ function y() {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# bun completions
+[ -s "/Users/cm/.bun/_bun" ] && source "/Users/cm/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
