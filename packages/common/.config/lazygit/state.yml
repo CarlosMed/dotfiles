@@ -1,12 +1,19 @@
 lastupdatecheck: 0
 recentrepos:
-    - /Users/carlos.medina/Code/dotfiles
+    - /Users/cm/Code/dotfiles
+    - /Users/cm/Code/work/sleep-me-web
+    - /Users/cm/Code/mi/go/reelingit
+    - /Users/cm/Code/work/sleep-me-content
+    - /Users/cm/Code/work/sleep-me-cms
+    - /Users/cm/Code/work/openai-dotcom
 startuppopupversion: 5
-lastversion: 0.42.0
-customcommandshistory: []
+lastversion: 0.46.0
+customcommandshistory:
+    - q
 hidecommandlog: false
 ignorewhitespaceindiffview: false
 diffcontextsize: 3
+renamesimilaritythreshold: 50
 localbranchsortorder: recency
 remotebranchsortorder: alphabetical
 gitlogorder: topo-order
