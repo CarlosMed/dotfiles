@@ -27,6 +27,7 @@ brew 'tree'
 
 # Dev
 brew 'git'
+brew 'golangci-lint'
 brew 'delta'
 brew 'pnpm'
 brew 'yarn'
