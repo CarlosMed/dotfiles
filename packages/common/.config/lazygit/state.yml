@@ -1,15 +1,6 @@
 lastupdatecheck: 0
-recentrepos:
-    - /Users/cm/Code/dotfiles
-    - /Users/cm/Code/work/sleep-me-web
-    - /Users/cm/Code/mi/go/reelingit
-    - /Users/cm/Code/work/sleep-me-content
-    - /Users/cm/Code/work/sleep-me-cms
-    - /Users/cm/Code/work/openai-dotcom
 startuppopupversion: 5
-lastversion: 0.46.0
-customcommandshistory:
-    - q
+lastversion: 0.50.0
 hidecommandlog: false
 ignorewhitespaceindiffview: false
 diffcontextsize: 3
