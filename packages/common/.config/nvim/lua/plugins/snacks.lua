@@ -55,9 +55,21 @@ return {
     lazygit = {
       enabled = true,
     },
+    notifier = {
+      enabled = true
+    },
     picker = {
       enabled = true,
     },
+    words = {
+      enabled = false
+    },
+    scroll = {
+      enabled = false
+    },
+    statuscolumn = {
+      enabled = true
+    }
   },
   keys = {
     -- LazyGit
@@ -137,7 +149,7 @@ return {
     {
       "<leader>ff",
       function()
-        Snacks.picker.files()
+        Snacks.picker.files({ matcher = { frecency = true, history_bonus = true, ignorecase = false } })
       end,
       desc = "Find Files",
     },
