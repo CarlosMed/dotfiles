@@ -78,7 +78,11 @@ if.app-name-regex-substring = 'zen'
 run = [ 'move-node-to-workspace p' ]
 
 [[on-window-detected]]
-if.app-name-regex-substring = 'arc'
+if.app-name-regex-substring = 'vivaldi'
+run = [ 'move-node-to-workspace w' ]
+
+[[on-window-detected]]
+if.app-name-regex-substring = 'cursor'
 run = [ 'move-node-to-workspace w' ]
 
 # Possible values: (qwerty|dvorak)
