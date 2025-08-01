@@ -208,7 +208,7 @@ alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
 alt-shift-enter = 'mode apps'
-alt-enter= ['exec-and-forget open -a /Applications/Kitty.app', 'mode main']
+alt-enter= ['exec-and-forget open -a /Applications/ghostty.app', 'mode main']
 
 # alt-a = 'exec-and-forget open -a /Applications/Arc.app'
 # alt-o = 'exec-and-forget open -a /Applications/Obsidian.app'
