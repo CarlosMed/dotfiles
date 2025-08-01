@@ -1,3 +1,3 @@
 return {
-  -- filetypes = { "html", "twig", "hbs", "tsx", "templ" },
+  filetypes = { "html", "twig", "hbs", "tsx", "templ" },
 }
