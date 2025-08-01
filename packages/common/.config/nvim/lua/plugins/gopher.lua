@@ -1,5 +1,6 @@
 return {
   "olexsmir/gopher.nvim",
+  enabled = true,
   ft = "go",
   -- branch = "develop", -- if you want develop branch
   -- keep in mind, it might break everything
