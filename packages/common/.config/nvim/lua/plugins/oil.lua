@@ -1,5 +1,6 @@
 return {
   "stevearc/oil.nvim",
+  -- enabled = false,
   opts = {
     keymaps = {
       ["g?"] = "actions.show_help",

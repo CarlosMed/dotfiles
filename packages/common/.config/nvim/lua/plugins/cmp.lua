@@ -1,7 +1,7 @@
 return {
-  -- "hrsh7th/nvim-cmp", -- Autocompletion
-  "yioneko/nvim-cmp", -- Autocompletion
-  branch = "perf",
+  "hrsh7th/nvim-cmp", -- Autocompletion
+  -- branch = "perf",
+  -- enabled = false,
   version = false,
   event = { "BufReadPost", "BufWritePost", "BufNewFile" },
   dependencies = {
@@ -27,15 +27,18 @@ return {
       completion = {
         completeopt = "menu,menuone,preview,noselect",
       },
+
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)
         end,
       },
+
       window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
       },
+
       mapping = cmp.mapping.preset.insert({
         ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
         ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -74,7 +77,7 @@ return {
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
         format = lspkind.cmp_format({
-          before = require("tailwind-tools.cmp").lspkind_format,
+          -- before = require("tailwind-tools.cmp").lspkind_format,
           -- mode = "symbol",
           maxwidth = 50,
           ellipsis_char = "...",
