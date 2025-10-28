@@ -24,6 +24,8 @@ brew 'sketchybar'
 brew 'ripgrep'
 brew 'trash-cli'
 brew 'tree'
+brew 'zoxide'
+brew 'opencode'
 
 # Dev
 brew 'git'
