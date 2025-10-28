@@ -47,3 +47,4 @@ alias purgemodules="find . -name "node_modules" -type d -prune -print -exec rm -
 # alias ls='eza --color=always --icons=always --long --git --no-filesize --no-time --no-user --no-permissions'
 
 alias temp='curl https://wttr.in'
+alias python='python3'
