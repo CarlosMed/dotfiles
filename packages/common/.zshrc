@@ -82,7 +82,7 @@ ZSH_CUSTOM=$custom
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z zsh-autosuggestions zsh-syntax-highlighting tmux)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -128,6 +128,9 @@ export MANPAGER="nvim --clean +Man!"
 
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
+
+# Set up zoxide
+eval "$(zoxide init zsh)"
 
 show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
 
