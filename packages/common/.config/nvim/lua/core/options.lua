@@ -24,7 +24,7 @@ vim.opt.shiftwidth = 2     -- 2 spaces for indent width
 vim.opt.expandtab = true   -- expand tabs to spaces
 vim.opt.autoindent = true  -- copy indent from current line when adding a new line
 vim.opt.smartindent = true -- indents lines smartly
-vim.opt.wrap = true        -- option to wrap text
+vim.opt.wrap = false       -- option to wrap text
 vim.opt.softtabstop = 2
 
 --[[ Behavior ]]

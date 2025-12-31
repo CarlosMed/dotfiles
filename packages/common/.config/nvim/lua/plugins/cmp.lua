@@ -24,10 +24,6 @@ return {
     luasnip.config.setup({})
 
     cmp.setup({
-      completion = {
-        completeopt = "menu,menuone,preview,noselect",
-      },
-
       snippet = {
         expand = function(args)
           luasnip.lsp_expand(args.body)

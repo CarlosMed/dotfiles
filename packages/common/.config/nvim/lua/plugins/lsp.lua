@@ -146,7 +146,7 @@ return {
     -- When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
     -- So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    -- capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+    capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     -- For each LSP server (cfg), we merge:
     -- 1. A fresh empty table (to avoid mutating capabilities globally)
@@ -164,18 +164,18 @@ return {
       ensure_installed = vim.tbl_keys(servers),
     })
 
-    vim.api.nvim_create_autocmd('LspAttach', {
-      callback = function(ev)
-        local client = vim.lsp.get_client_by_id(ev.data.client_id)
-        if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
-          vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'fuzzy', 'popup' }
-          vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-          vim.keymap.set('i', '<C-Space>', function()
-            vim.lsp.completion.get()
-          end)
-        end
-      end,
-    })
+    -- vim.api.nvim_create_autocmd('LspAttach', {
+    --   callback = function(ev)
+    --     local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    --     if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_completion) then
+    --       vim.opt.completeopt = { 'menu', 'menuone', 'noinsert', 'fuzzy', 'popup' }
+    --       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+    --       vim.keymap.set('i', '<C-Space>', function()
+    --         vim.lsp.completion.get()
+    --       end)
+    --     end
+    --   end,
+    -- })
 
     -- Diagnostics
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
