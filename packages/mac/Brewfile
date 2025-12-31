@@ -25,6 +25,7 @@ brew 'ripgrep'
 brew 'trash-cli'
 brew 'tree'
 brew 'zoxide'
+brew 'carapace'
 brew 'opencode'
 
 # Dev
