@@ -6,6 +6,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+if [[ "$TERM_PROGRAM" == "ghostty" ]]; then
+    export TERM=xterm-256color
+fi
+
 # zmodload zsh/zprof        # Used to measure ZSH performance
 user="$(whoami)"
 custom=$HOME/Code/dotfiles/packages/common/.oh-my-zsh/custom
