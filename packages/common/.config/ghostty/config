@@ -1,4 +1,6 @@
 config-file = themes/gruvbox-material-hard-dark
+# theme = Gruvbox Dark Hard
+
 
 # Some shaders can be found in this repo, they're usually uploaded to discord
 # https://github.com/hackrmomo/ghostty-shaders
@@ -74,9 +76,12 @@ command = zsh --login -c "if command -v tmux >/dev/null 2>&1; then tmux attach |
 # `window-padding-x = 2` will set both paddings to 2.
 window-padding-x = 10,10
 window-padding-y = 10,10
+window-padding-color = background
 
 font-family = "JetBrainsMono Nerd Font"
 font-size = 13
+font-thicken = true
+font-thicken-strength = 255
 
 # Valid values:
 # 
@@ -129,6 +134,12 @@ confirm-close-surface = false
 #  work in all environments; see the additional notes below for more
 #  information.
 # keybind = global:cmd+s=toggle_quick_terminal
+quick-terminal-position = top
+quick-terminal-screen = main
+# quick-terminal-animation-duration = 0.2
+quick-terminal-animation-duration = 0.08
+quick-terminal-autohide = true
+
 keybind = ctrl+`=toggle_quick_terminal
 
 # If `true`, the *Option* key will be treated as *Alt*. This makes terminal
@@ -149,7 +160,6 @@ macos-option-as-alt = right
 # Duration (in seconds) of the quick terminal enter and exit animation.
 # Set it to 0 to disable animation completely. This can be changed at
 # runtime.
-quick-terminal-animation-duration = 0.08
 
 keybind = super+i=inspector:toggle
 keybind = super+r=reload_config
@@ -203,7 +213,7 @@ background-opacity = 0.7
 #     reasonable for a good looking blur. Higher blur intensities may
 #     cause strange rendering and performance issues.
 # 
-background-blur = true
+background-blur = 5
 
 # The opacity level (opposite of transparency) of an unfocused split.
 # Unfocused splits by default are slightly faded out to make it easier to see
@@ -215,3 +225,7 @@ background-blur = true
 # on. A value outside of the range 0.15 to 1 will be clamped to the nearest
 # valid value.
 unfocused-split-opacity = 0.9
+
+scrollback-limit = 100000000
+shell-integration = detect
+shell-integration-features = cursor,sudo,title
