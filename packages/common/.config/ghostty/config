@@ -201,7 +201,7 @@ keybind = super+k=clear_screen
 # 
 macos-icon = xray
 
-background-opacity = 0.7
+background-opacity = 0.9
 
 # Whether to blur the background when `background-opacity` is less than 1.
 # 
