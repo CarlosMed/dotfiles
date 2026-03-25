@@ -38,10 +38,10 @@ return {
       bash = { "shfmt", "shellharden" },
       go = { "goimports", "gofumpt", "gofmt", "gomodifytags" },
     },
-    -- format_on_save = {
-    --   lsp_fallback = true,
-    --   timeout_ms = 500,
-    -- },
+    format_on_save = {
+      lsp_fallback = true,
+      timeout_ms = 500,
+    },
     formatters = {
       injected = { options = { ignore_errors = true } },
     },
