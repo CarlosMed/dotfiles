@@ -15,10 +15,10 @@ return {
           icons = {
             package_installed = "✓",
             package_pending = "➜",
-            package_uninstalled = "✗"
-          }
-        }
-      }
+            package_uninstalled = "✗",
+          },
+        },
+      },
     },
 
     -- mason-tool-installer:
@@ -29,9 +29,9 @@ return {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
       opts = {
         ensure_installed = {
-          "prettierd",
+          -- "prettierd", -- disabling global prettier
           "stylua",
-          "eslint_d",
+          "eslint",
           "goimports",
           "gofumpt",
           "gomodifytags",
@@ -50,32 +50,32 @@ return {
       "j-hui/fidget.nvim",
       tag = "legacy",
       opts = {},
-      event = "VeryLazy"
+      event = "VeryLazy",
     },
   },
 
   config = function()
-    vim.api.nvim_create_autocmd('LspAttach', {
-      group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+    vim.api.nvim_create_autocmd("LspAttach", {
+      group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
       callback = function(event)
         -- Create a function that lets us more easily define mappings specific
         -- for LSP related items. It sets the mode, buffer and description for us each time.
         local map = function(keys, func, desc, mode)
-          mode = mode or 'n'
-          vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
+          mode = mode or "n"
+          vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
         end
 
         -- Rename the variable under your cursor.
         --  Most Language Servers support renaming across files, etc.
-        map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+        map("<leader>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 
         -- Execute a code action, usually your cursor needs to be on top of an error
         -- or a suggestion from your LSP for this to activate.
-        map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction', { 'n', 'x' })
+        map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
 
         -- WARN: This is not Goto Definition, this is Goto Declaration.
         --  For example, in C this would take you to the header.
-        map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+        map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
         -- The following two autocommands are used to highlight references of the
         -- word under your cursor when your cursor rests there for a little while.
@@ -83,24 +83,24 @@ return {
         -- When you move your cursor, the highlights will be cleared (the second autocommand).
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
-          local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
-          vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+          local highlight_augroup = vim.api.nvim_create_augroup("kickstart-lsp-highlight", { clear = false })
+          vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
             buffer = event.buf,
             group = highlight_augroup,
             callback = vim.lsp.buf.document_highlight,
           })
 
-          vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+          vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
             buffer = event.buf,
             group = highlight_augroup,
             callback = vim.lsp.buf.clear_references,
           })
 
-          vim.api.nvim_create_autocmd('LspDetach', {
-            group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
+          vim.api.nvim_create_autocmd("LspDetach", {
+            group = vim.api.nvim_create_augroup("kickstart-lsp-detach", { clear = true }),
             callback = function(event2)
               vim.lsp.buf.clear_references()
-              vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
+              vim.api.nvim_clear_autocmds({ group = "kickstart-lsp-highlight", buffer = event2.buf })
             end,
           })
         end
@@ -108,9 +108,9 @@ return {
         -- The following code creates a keymap to toggle inlay hints in your
         -- code, if the language server you are using supports them
         if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
-          map('<leader>th', function()
-            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-          end, '[T]oggle Inlay [H]ints')
+          map("<leader>th", function()
+            vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ bufnr = event.buf }))
+          end, "[T]oggle Inlay [H]ints")
         end
       end,
     })
@@ -146,18 +146,107 @@ return {
     -- When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
     -- So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
+    capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
     -- For each LSP server (cfg), we merge:
     -- 1. A fresh empty table (to avoid mutating capabilities globally)
     -- 2. Your capabilities object with Neovim + cmp features
     -- 3. Any server-specific cfg.capabilities if defined in `servers`
     for server, cfg in pairs(servers) do
-      cfg.capabilities = vim.tbl_deep_extend('force', {}, capabilities, cfg.capabilities or {})
+      cfg.capabilities = vim.tbl_deep_extend("force", {}, capabilities, cfg.capabilities or {})
 
       vim.lsp.config(server, cfg)
       vim.lsp.enable(server)
     end
+
+    -- Configure eslint using vim.lsp.config instead of lspconfig
+    local customizations = {
+      { rule = "style/*", severity = "off", fixable = true },
+      { rule = "format/*", severity = "off", fixable = true },
+      { rule = "*-indent", severity = "off", fixable = true },
+      { rule = "*-spacing", severity = "off", fixable = true },
+      { rule = "*-spaces", severity = "off", fixable = true },
+      { rule = "*-order", severity = "off", fixable = true },
+      { rule = "*-dangle", severity = "off", fixable = true },
+      { rule = "*-newline", severity = "off", fixable = true },
+      { rule = "*quotes", severity = "off", fixable = true },
+      { rule = "*semi", severity = "off", fixable = true },
+    }
+
+    -- Configure eslint with vim.lsp.config
+    vim.lsp.config("eslint", {
+      capabilities = vim.tbl_deep_extend("force", {}, capabilities),
+      filetypes = {
+        "javascript",
+        "javascriptreact",
+        "javascript.jsx",
+        "typescript",
+        "typescriptreact",
+        "typescript.tsx",
+        "vue",
+        "html",
+        "markdown",
+        "json",
+        "jsonc",
+        "yaml",
+        "toml",
+        "xml",
+        "gql",
+        "graphql",
+        "astro",
+        "svelte",
+        "css",
+        "less",
+        "scss",
+        "pcss",
+        "postcss",
+      },
+      settings = {
+        -- Silent the stylistic rules in your IDE, but still auto fix them
+        rulesCustomizations = customizations,
+      },
+    })
+
+    -- Enable eslint
+    vim.lsp.enable("eslint")
+
+    -- Create autocmd for eslint fix on save
+    vim.api.nvim_create_autocmd("LspAttach", {
+      callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if client and client.name == "eslint" then
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = args.buf,
+            callback = function()
+              local params = vim.lsp.util.make_range_params(0, client.offset_encoding)
+              params.context = {
+                only = { "source.fixAll.eslint" },
+                diagnostics = {},
+              }
+
+              local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 3000)
+              if not result then
+                return
+              end
+
+              for client_id, res in pairs(result) do
+                if res.result then
+                  for _, action in pairs(res.result) do
+                    -- Prefer command over edit if both are present
+                    if action.command then
+                      local command = action.command
+                      vim.lsp.buf.execute_command(command)
+                    elseif action.edit then
+                      vim.lsp.util.apply_workspace_edit(action.edit, client.offset_encoding)
+                    end
+                  end
+                end
+              end
+            end,
+          })
+        end
+      end,
+    })
 
     -- Ensure the servers above are installed
     require("mason-lspconfig").setup({
@@ -173,12 +262,12 @@ return {
     --       vim.keymap.set('i', '<C-Space>', function()
     --         vim.lsp.completion.get()
     --       end)
-    --     end
+    --     end,
     --   end,
     -- })
 
     -- Diagnostics
-    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+    local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
     vim.diagnostic.config({
       -- Use the default configuration
       virtual_lines = true,
@@ -198,5 +287,5 @@ return {
         },
       },
     })
-  end
+  end,
 }

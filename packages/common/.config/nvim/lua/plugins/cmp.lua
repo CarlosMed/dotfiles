@@ -65,8 +65,8 @@ return {
         end, { "i", "s" }),
       }),
       sources = {
-        { name = "luasnip" },
         { name = "nvim_lsp" },
+        { name = "luasnip" },
         { name = "buffer" },
         { name = "path" }, -- file system paths
       },
