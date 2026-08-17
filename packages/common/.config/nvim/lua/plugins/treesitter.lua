@@ -4,37 +4,39 @@ return {
   -- syntax highlighting.
   {
     "nvim-treesitter/nvim-treesitter",
-    branch = "main",
-    version = false,
+    version = false, -- last release is way too old and doesn't work on Windows
     build = ":TSUpdate",
     event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+    -- event = { "BufReadPre", "BufNewFile" },
+    init = function()
+      require("nvim-treesitter.query_predicates")
+    end,
     dependencies = {
-      -- TEMPORARILY DISABLED: nvim-treesitter-textobjects is incompatible with main branch
-      -- {
-      --   "nvim-treesitter/nvim-treesitter-textobjects",
-      --   config = function()
-      --     -- When in diff mode, we want to use the default
-      --     -- vim text objects c & C instead of the treesitter ones.
-      --     local move = require("nvim-treesitter.textobjects.move") ---@type table<string,fun(...)>
-      --     local configs = require("nvim-treesitter.configs")
-      --     for name, fn in pairs(move) do
-      --       if name:find("goto") == 1 then
-      --         move[name] = function(q, ...)
-      --           if vim.wo.diff then
-      --             local config = configs.get_module("textobjects.move")[name] ---@type table<string,string>
-      --             for key, query in pairs(config or {}) do
-      --               if q == query and key:find("[%]%[][cC]") then
-      --                 vim.cmd("normal! " .. key)
-      --                 return
-      --               end
-      --             end
-      --           end
-      --           return fn(q, ...)
-      --         end
-      --       end
-      --     end
-      --   end,
-      -- },
+      {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+        config = function()
+          -- When in diff mode, we want to use the default
+          -- vim text objects c & C instead of the treesitter ones.
+          local move = require("nvim-treesitter.textobjects.move") ---@type table<string,fun(...)>
+          local configs = require("nvim-treesitter.configs")
+          for name, fn in pairs(move) do
+            if name:find("goto") == 1 then
+              move[name] = function(q, ...)
+                if vim.wo.diff then
+                  local config = configs.get_module("textobjects.move")[name] ---@type table<string,string>
+                  for key, query in pairs(config or {}) do
+                    if q == query and key:find("[%]%[][cC]") then
+                      vim.cmd("normal! " .. key)
+                      return
+                    end
+                  end
+                end
+                return fn(q, ...)
+              end
+            end
+          end
+        end,
+      },
     },
     cmd = { "TSUpdateSync", "TSUpdate", "TSInstall" },
     keys = {
@@ -44,17 +46,7 @@ return {
     ---@type TSConfig
     ---@diagnostic disable-next-line: missing-fields
     opts = {
-      highlight = {
-        enable = true,
-        -- BREAKING CHANGE: disable_range_vim_regex_modifiers might be needed
-        -- disable = function(lang, buf)
-        --   local max_filesize = 100 * 1024 -- 100 KB
-        --   local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
-        --   if ok and stats and stats.size > max_filesize then
-        --     return true
-        --   end
-        -- end,
-      },
+      highlight = { enable = true },
       indent = { enable = true },
       ensure_installed = {
         "angular",
@@ -119,11 +111,33 @@ return {
           node_decremental = "<bs>",
         },
       },
-      -- REMOVED: context_commentstring (no longer needed or auto-handled)
-      -- If you still need it, install the plugin separately
-
-      -- REMOVED: textobjects config (plugin disabled for main branch compatibility)
-      -- Re-enable when nvim-treesitter-textobjects updates for main branch
+      -- enable nvim-ts-context-commentstring plugin for commenting tsx and jsx
+      context_commentstring = {
+        enable_autocmd = false,
+        languages = "// %s",
+      },
+      textobjects = {
+        select = {
+          enable = true,
+          lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+          keymaps = {
+            -- You can use the capture groups defined in textobjects.scm
+            ["aa"] = "@parameter.outer",
+            ["ia"] = "@parameter.inner",
+            ["af"] = "@function.outer",
+            ["if"] = "@function.inner",
+            ["ac"] = "@class.outer",
+            ["ic"] = "@class.inner",
+          },
+        },
+        move = {
+          enable = true,
+          goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer" },
+          goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer" },
+          goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer" },
+          goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer" },
+        },
+      },
     },
     ---@param opts TSConfig
     config = function(_, opts)
@@ -145,6 +159,7 @@ return {
   -- Automatically add closing tags for HTML and JSX
   {
     "windwp/nvim-ts-autotag",
+    -- event = "LazyFile",
     event = { "BufReadPost", "BufWritePost", "BufNewFile" },
     opts = {
       opts = {
