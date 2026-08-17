@@ -5,6 +5,9 @@ return {
   -- enabled = false,
   ---@type snacks.Config
   opts = {
+    -- image = {
+    --   enabled = false,
+    -- },
     bufdelete = {
       enabled = true,
     },
@@ -57,20 +60,20 @@ return {
       enabled = true,
     },
     notifier = {
-      enabled = true
+      enabled = true,
     },
     picker = {
       enabled = true,
     },
     words = {
-      enabled = false
+      enabled = false,
     },
     scroll = {
-      enabled = false
+      enabled = false,
     },
     statuscolumn = {
-      enabled = true
-    }
+      enabled = true,
+    },
   },
   keys = {
     -- LazyGit
@@ -133,13 +136,6 @@ return {
       desc = "File Explorer",
     },
     -- find
-    {
-      "<leader>fb",
-      function()
-        Snacks.picker.buffers()
-      end,
-      desc = "Buffers",
-    },
     {
       "<leader>fc",
       function()
@@ -226,13 +222,6 @@ return {
       desc = "Git Log File",
     },
     -- Grep
-    {
-      "<leader>sb",
-      function()
-        Snacks.picker.lines()
-      end,
-      desc = "Buffer Lines",
-    },
     {
       "<leader>sB",
       function()
