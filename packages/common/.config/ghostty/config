@@ -232,3 +232,6 @@ unfocused-split-opacity = 0.9
 scrollback-limit = 100000000
 shell-integration = detect
 shell-integration-features = cursor,sudo,title
+
+# treats shift+enter as a new line
+keybind = shift+enter=text:\x1b\r
