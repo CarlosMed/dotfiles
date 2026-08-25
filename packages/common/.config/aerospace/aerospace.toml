@@ -1,4 +1,4 @@
-after-startup-command = ['exec-and-forget /opt/homebrew/bin/sketchybar']
+after-startup-command = ['exec-and-forget /opt/homebrew/bin/sketchybar', 'exec-and-forget borders active_color="gradient(top_left=0xfff5a97f,bottom_right=0x0xffa6da95)" width=7.0 hidpi=on']
 
 # Notify Sketchybar about workspace change
 exec-on-workspace-change = ['/bin/bash', '-c', 'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE', '--trigger aerospace_mode_change' ]
