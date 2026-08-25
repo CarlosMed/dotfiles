@@ -35,14 +35,16 @@ mac () {
 	echo "###     oh-my-zsh     ###"
 	echo "#########################"
 
-	printf "%s\n" $green
-	if ! $(test -d "$home/.oh-my-zsh"); then
-		echo "Installing Oh My ZSH"
+		echo "Skipping installing Oh My ZSH"
 
-		sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-	else
-		echo "Oh My ZSH already installed"
-	fi
+	# printf "%s\n" $green
+	# if ! $(test -d "$home/.oh-my-zsh"); then
+	# 	echo "Installing Oh My ZSH"
+	#
+	# 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	# else
+	# 	echo "Oh My ZSH already installed"
+	# fi
 
 	# Setting up brew packages
 	printf "%s\n" $yellow

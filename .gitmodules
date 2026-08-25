@@ -1,15 +1,12 @@
-[submodule "packages/common/.oh-my-zsh/custom/themes/geometry"]
-	path = packages/common/.oh-my-zsh/custom/themes/geometry
-	url = https://github.com/geometry-zsh/geometry
 [submodule "packages/common/.vim/colors/gruvbox"]
 	path = packages/common/.vim/colors/gruvbox
 	url = https://github.com/morhetz/gruvbox.git
-[submodule "packages/common/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
-	path = packages/common/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+[submodule "packages/common/.config/zsh/plugins/zsh-syntax-highlighting"]
+	path = packages/common/.config/zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "packages/common/.oh-my-zsh/custom/plugins/zsh-autosuggestions"]
-	path = packages/common/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+[submodule "packages/common/.config/zsh/plugins/zsh-autosuggestions"]
+	path = packages/common/.config/zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
-[submodule "packages/common/.oh-my-zsh/custom/themes/powerlevel10k"]
-	path = packages/common/.oh-my-zsh/custom/themes/powerlevel10k
-	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "packages/common/.config/zsh/plugins/zsh-vi-mode"]
+	path = packages/common/.config/zsh/plugins/zsh-vi-mode
+	url = https://github.com/jeffreytse/zsh-vi-mode.git

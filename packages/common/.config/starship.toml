@@ -1,114 +1,279 @@
+# format = """
+# [ ┌───────────]\
+# (bold white)\
+# [󰉕  ](bold bg:none fg:green)\
+# (bold bg:none fg:green)\
+# [\
+# $git_branch\
+# $git_commit\
+# $git_state\
+# $git_metrics\
+# $git_status\
+# $hg_branch\
+# ]\
+# (bold bg:purple fg:black)\
+# $singularity\
+# $kubernetes\
+# $directory
+# [ │ ]\
+# (bold white)\
+# $docker_context\
+# $package\
+# $c\
+# $cmake\
+# $cobol\
+# $daml\
+# $dart\
+# $deno\
+# $dotnet\
+# $elixir\
+# $elm\
+# $erlang\
+# $golang\
+# $gradle\
+# $haskell\
+# $helm\
+# $java\
+# $julia\
+# $kotlin\
+# $lua\
+# $nim\
+# $nodejs\
+# $ocaml\
+# $perl\
+# $php\
+# $pulumi\
+# $purescript\
+# $python\
+# $raku\
+# $rlang\
+# $red\
+# $ruby\
+# $rust\
+# $scala\
+# $swift\
+# $terraform\
+# $vlang\
+# $vagrant\
+# $zig\
+# $nix_shell\
+# $conda\
+# $memory_usage\
+# $aws\
+# $gcloud\
+# $openstack\
+# $env_var\
+# $crystal\
+# $cmd_duration\
+# $line_break\
+# [ └───](bg:none fg:white)\
+# $status\
+# $character\
+# """
+# [fill]
+# symbol = " "
+#
+# [username]
+# show_always = true
+# style_user = "bold fg:white"
+# style_root = "bold fg:white"
+# format = "[$user]($style)"
+#
+# [git_branch]
+# symbol = " "
+# format = " on [$symbol$branch]($style) "
+# style = "bold bg:purple fg:black"
+#
+# [git_commit]
+# style = "bold bg:purple fg:black"
+#
+# [git_state]
+# style = "bold bg:purple fg:black"
+#
+# [git_status]
+# style = "bold bg:purple fg:black"
+#
+# [time]
+# disabled = false
+# format = "[$time]($style)"
+# style = "bg:white fg:black"
+#
+# [directory]
+# read_only = " "
+# truncation_length = 3
+# truncation_symbol = "./"
+# style = "bold bg:none fg:green"
+#
+# [status]
+# symbol = " "
+# disabled = false
+#
+# [character]
+# success_symbol = "[󰣉 ](bold bg:none fg:white)"
+# error_symbol = "[󰣉 ](bold red)"
+# vicmd_symbol = "[󰣉 ](bold yellow)"
+
+
+################# END
+
+#                            #
+# Starship Config by a3chron #
+#   Gruvbox Material (dark)  #
+#                            #
+
+palette = "gruvbox_material"
+
+# custom format
 format = """
-[ ┌───────────]\
-(bold white)\
-[󰉕  ](bold bg:none fg:green)\
-(bold bg:none fg:green)\
-[\
-$git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
-$git_status\
-$hg_branch\
-]\
-(bold bg:purple fg:black)\
-$singularity\
-$kubernetes\
-$directory
-[ │ ]\
-(bold white)\
-$docker_context\
-$package\
-$c\
-$cmake\
-$cobol\
-$daml\
-$dart\
-$deno\
-$dotnet\
-$elixir\
-$elm\
-$erlang\
-$golang\
-$gradle\
-$haskell\
-$helm\
-$java\
-$julia\
-$kotlin\
-$lua\
-$nim\
-$nodejs\
-$ocaml\
-$perl\
-$php\
-$pulumi\
-$purescript\
-$python\
-$raku\
-$rlang\
-$red\
-$ruby\
-$rust\
-$scala\
-$swift\
-$terraform\
-$vlang\
-$vagrant\
-$zig\
-$nix_shell\
-$conda\
-$memory_usage\
-$aws\
-$gcloud\
-$openstack\
-$env_var\
-$crystal\
-$cmd_duration\
-$line_break\
-[ └───](bg:none fg:white)\
-$status\
-$character\
-"""
-[fill]
-symbol = " "
+[╭─ $shell──$nix_shell───────────── $memory_usage ──╌╌ $nodejs$python$golang$ocaml $fill ╌╌─╮](grey0)
+[├╌](grey0)$sudo$username$hostname$localip$directory$read_only$git_branch$git_commit$git_metrics [$fill $cmd_duration ┘](grey0)
+[╰─ $battery $character](grey0) """
+#format = '$all$directory$character'
+
+# Wait 10 milliseconds for starship to check files under the current directory.
+scan_timeout = 10
+command_timeout = 500
+add_newline = true
+
+# Gruvbox Material Theme (dark, medium contrast)
+[palettes.gruvbox_material]
+# accents
+red      = "#ea6962"
+orange   = "#e78a4e"
+yellow   = "#d8a657"
+green    = "#a9b665"
+aqua     = "#89b482"
+blue     = "#7daea3"
+purple   = "#d3869b"
+# greys
+grey2    = "#a89984"
+grey1    = "#928374"
+grey0    = "#7c6f64"
+# foregrounds
+fg1      = "#ddc7a1"
+fg0      = "#d4be98"
+# backgrounds
+bg5      = "#5b534d"
+bg4      = "#45403d"
+bg3      = "#3c3836"
+bg2      = "#32302f"
+bg1      = "#32302f"
+bg0      = "#282828"
+bg_dim   = "#1d2021"
+
+
+[shell]
+fish_indicator = 'fish'
+bash_indicator = 'bash'
+unknown_indicator = 'unknwn'
+style = 'green'
+disabled = false
+
+[nix_shell]
+disabled = false
+impure_msg = '[\[impure\]](orange)'
+pure_msg = '[\[pure\]](green)'
+unknown_msg = '[\[unknown\]](dimmed yellow)'
+format = '╌╌ [$name](dimmed green)$state ╌╌'
 
 [username]
+style_user = 'green bold'
+format = ' [$user@]($style)'
+disabled = false
 show_always = true
-style_user = "bold fg:white"
-style_root = "bold fg:white"
-format = "[$user]($style)"
 
-[git_branch]
-symbol = " "
-format = " on [$symbol$branch]($style) "
-style = "bold bg:purple fg:black"
+[sudo]
+format = ' [sudo](bold red)'
+disabled = false
+
+[python]
+symbol = ''
+format = '[Python](bold yellow) [$version [\($virtualenv\)](dimmed yellow)](dimmed yellow)'
+pyenv_version_name = true
+detect_files = ['requirements.txt', '__init.py__', 'setup.py']
+detect_extensions = ['py']
+detect_folders = []
+
+[nodejs]
+format = '[Node](bold yellow) [$version](bold dimmed yellow) '
+
+[golang]
+format = '[Go](bold yellow) [$version](bold dimmed yellow) '
+
+[ocaml]
+format = '[Ocaml](bold yellow) [$version](bold dimmed yellow) '
+
+[memory_usage]
+disabled = false
+threshold = -1
+format = '[$ram_pct]($style)'
+symbol = ''
+style = 'dimmed yellow'
+
+[localip]
+ssh_only = false
+format = '[@$localipv4](bold dimmed yellow) '
+disabled = false
+
+[hostname]
+ssh_only = false
+ssh_symbol = 'ssh:'
+format = '[$ssh_symbol](bold dimmed orange)[$hostname](bold dimmed green)'
+trim_at = ''
+disabled = false
+
+[git_metrics]
+disabled = false
+format = ' [+$added](bold green)[-$deleted](bold red)'
 
 [git_commit]
-style = "bold bg:purple fg:black"
+format = ' [$tag](dimmed green)'
+tag_disabled = false
+tag_symbol = ''
+only_detached = false
 
-[git_state]
-style = "bold bg:purple fg:black"
+[git_branch]
+format = '[$branch(:$remote_branch)]($style)'
+style = 'bold dimmed aqua'
 
-[git_status]
-style = "bold bg:purple fg:black"
+[fill]
+symbol = ' '
+style = 'bold bg0'
 
-[time]
-disabled = false
-format = "[$time]($style)"
-style = "bg:white fg:black"
+# time of command
+[cmd_duration]
+min_time = 500
+format = ' [$duration](bold dimmed yellow)'
 
 [directory]
-read_only = " "
-truncation_length = 3
-truncation_symbol = "./"
-style = "bold bg:none fg:green"
-
-[status]
-symbol = " "
+fish_style_pwd_dir_length = 5
 disabled = false
+truncation_length = 5
+truncation_symbol = '…/'
+read_only = ' read-only'
+read_only_style = 'bold dimmed yellow'
+style = 'bold yellow'
 
+# prompt char
 [character]
-success_symbol = "[󰣉 ](bold bg:none fg:white)"
-error_symbol = "[󰣉 ](bold red)"
-vicmd_symbol = "[󰣉 ](bold yellow)"
+success_symbol = '[──╌╌](grey0)'
+error_symbol = '[──╌╌](red)'
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+
+# battery
+[battery]
+full_symbol = '● '
+charging_symbol = '◉ '
+discharging_symbol = '◯ '
+
+[[battery.display]]
+threshold = 20
+style = 'red'
+
+[[battery.display]]
+threshold = 100
+style = 'green'
