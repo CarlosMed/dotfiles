@@ -80,6 +80,8 @@ if vim.fn.has("nvim-0.10") == 1 then
   vim.opt.smoothscroll = true
 end
 
+-- vim.cmd("set completeopt+=noselect")
+
 --[[ UNUSED OPTIONS ]]
 -- -- Set completeopt to have a better completion experience
 -- vim.o.completeopt =  "menu,menuone,preview,noselect"
