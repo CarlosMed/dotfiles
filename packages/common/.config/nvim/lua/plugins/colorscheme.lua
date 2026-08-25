@@ -22,8 +22,8 @@ return {
       vim.g.gruvbox_material_cursor = "auto"
 
       vim.cmd.colorscheme("gruvbox-material")     -- For highlights customizations go to lua/core/highlights
-      vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
-      vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+      -- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+      -- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
     end,
   },
   {
