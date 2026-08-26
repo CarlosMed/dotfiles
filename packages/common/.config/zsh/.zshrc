@@ -32,6 +32,11 @@ if [[ "$TERM_PROGRAM" == "ghostty" ]]; then
   export TERM=xterm-256color
 fi
 
+# Enabling vim mode for zsh
+export VISUAL=nvim
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+
 show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
 
 # ---------- FASTFETCH ----------
@@ -84,7 +89,6 @@ eval "$(zoxide init zsh)" # Set up zoxide
 source $ZPLUG/fzf.zsh
 source $ZPLUG/git.plugin.zsh
 source $ZPLUG/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source $ZPLUG/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 source $ZPLUG/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
 # zprof # ZSH Performance End
