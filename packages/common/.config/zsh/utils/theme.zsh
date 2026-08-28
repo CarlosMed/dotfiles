@@ -1,5 +1,8 @@
+# ---------- OH-MY-POSH ----------
+eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
+
 # ---------- Starship ----------
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # ---------- Geometry ----------
 #GEOMETRY_PROMPT_PLUGINS=(exec_time node git)
