@@ -41,6 +41,7 @@ brew 'tmux'
 brew 'lazygit'
 brew 'asdf'
 brew 'imagemagick'
+brew 'jandedobbeleer/oh-my-posh/oh-my-posh'
 
 # Apps
 cask 'alt-tab'
