@@ -12,6 +12,18 @@ alias la='eza -lah --icons auto --git' # Detailed listing including hidden files
 alias tree='eza --tree --icons auto' # Tree view
 # compdef eza=ls # Reuse ls completions for eza (avoids defining a separate completion function)
 
+# Just type the filename to open it with the associated program
+alias -s json=jless
+alias -s md=bat
+alias -s go='$EDITOR'
+alias -s rs='$EDITOR'
+alias -s txt=bat
+alias -s log=bat
+alias -s py='$EDITOR'
+alias -s js='$EDITOR'
+alias -s ts='$EDITOR'
+alias -s html=open  # macOS: open in default browser
+
 # Arch shortcuts
 alias pacman="_ pacman"
 alias stx="startx"
