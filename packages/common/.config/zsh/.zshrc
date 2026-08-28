@@ -37,6 +37,10 @@ export VISUAL=nvim
 autoload edit-command-line; zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
+chpwd(){
+  eza -lah --icons auto --git
+}
+
 show_file_or_dir_preview="if [ -d {} ]; then eza --tree --color=always {} | head -200; else bat -n --color=always --line-range :500 {}; fi"
 
 # ---------- FASTFETCH ----------
@@ -69,7 +73,6 @@ source <(carapace _carapace)
 
 export PATH="/usr/local/sbin:/opt/nvim-linux64/bin:$HOME/.volta/bin:$HOME/go/bin/:$PATH"
 export BAT_THEME="gruvbox-dark"
-
 
 # =========================================================
 # Modular Config Files
