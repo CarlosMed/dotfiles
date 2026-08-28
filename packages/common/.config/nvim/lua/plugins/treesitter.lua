@@ -4,14 +4,14 @@ return {
   -- syntax highlighting.
   {
     "nvim-treesitter/nvim-treesitter",
-    -- branch = "main", -- enabled once treesitter works for nvim v12.4
+    branch = "main", -- enabled once treesitter works for nvim v12.4
     version = false, -- last release is way too old and doesn't work on Windows
     build = ":TSUpdate",
     event = { "BufReadPost", "BufWritePost", "BufNewFile" },
     -- event = { "BufReadPre", "BufNewFile" },
-    init = function()
-      require("nvim-treesitter.query_predicates")
-    end,
+    -- init = function()
+    --   require("nvim-treesitter.query_predicates")
+    -- end,
     dependencies = {
       -- {
       --   "nvim-treesitter/nvim-treesitter-textobjects",
@@ -141,20 +141,20 @@ return {
       },
     },
     ---@param opts TSConfig
-    config = function(_, opts)
-      if type(opts.ensure_installed) == "table" then
-        ---@type table<string, boolean>
-        local added = {}
-        opts.ensure_installed = vim.tbl_filter(function(lang)
-          if added[lang] then
-            return false
-          end
-          added[lang] = true
-          return true
-        end, opts.ensure_installed)
-      end
-      require("nvim-treesitter.configs").setup(opts)
-    end,
+    -- config = function(_, opts)
+    --   if type(opts.ensure_installed) == "table" then
+    --     ---@type table<string, boolean>
+    --     local added = {}
+    --     opts.ensure_installed = vim.tbl_filter(function(lang)
+    --       if added[lang] then
+    --         return false
+    --       end
+    --       added[lang] = true
+    --       return true
+    --     end, opts.ensure_installed)
+    --   end
+    --   require("nvim-treesitter.configs").setup(opts)
+    -- end,
   },
 
   -- Automatically add closing tags for HTML and JSX
