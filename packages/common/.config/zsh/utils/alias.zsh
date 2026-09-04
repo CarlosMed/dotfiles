@@ -67,3 +67,28 @@ alias purgemodules="find . -name "node_modules" -type d -prune -print -exec rm -
 
 alias temp='curl https://wttr.in'
 alias python='python3'
+
+# -------------------------------------------
+# 6. Global Aliases - Use Anywhere in Commands
+# -------------------------------------------
+# Redirect stderr to /dev/null
+alias -g NE='2>/dev/null'
+
+# Redirect stdout to /dev/null
+alias -g NO='>/dev/null'
+
+# Redirect both stdout and stderr to /dev/null
+alias -g NUL='>/dev/null 2>&1'
+
+# Pipe to jq
+alias -g J='| jq'
+
+# Copy output to clipboard (macOS)
+alias -g C='| pbcopy'
+
+# -------------------------------------------
+# 8. Named Directories - Bookmark Folders
+# -------------------------------------------
+# Access with ~name syntax, e.g., cd ~yt or ls ~yt
+hash -d dot=~/Code/dotfiles
+hash -d dl=~/Downloads
