@@ -62,9 +62,24 @@ vim.o.smartcase = true -- if you include mixed case in your search, assumes you 
 vim.opt.hlsearch = false -- turns off highlight search
 vim.opt.incsearch = true -- turns on incremental search
 
--- Decrease update time
-vim.o.timeoutlen = 300
+vim.opt.grepformat = "%f:%l:%c:%m,%f:%l:%m"
+vim.opt.path:append("**") -- add recursion into sub directory when using :find
+vim.opt.wildignore:append({
+  "*/node_modules/*",
+  "*/dist/*",
+  "*/build/*",
+  "*/target/*",
+  "*/.git/*",
+}) -- ignore list for vimgrep
+vim.opt.wildmenu = true
+vim.opt.wildmode = "longest:full,full"
 vim.o.updatetime = 200 -- fast update time
+vim.opt.suffixesadd:append({
+  ".lua",
+  ".ts",
+  ".tsx",
+  ".js",
+})
 
 -- Undo history and swap files
 vim.opt.swapfile = false

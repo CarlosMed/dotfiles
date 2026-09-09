@@ -76,6 +76,11 @@ keymap.set("n", "<leader>-", "<C-x>", { desc = "Decrement number" }) -- decremen
 -- lazy
 keymap.set("n", "<leader>lz", "<cmd>Lazy<cr>", { desc = "Lazy" })
 
+keymap.set("n", "<leader>vg", function()
+  vim.cmd("silent grep! " .. vim.fn.input("Grep > "))
+  vim.cmd("copen")
+end)
+
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
