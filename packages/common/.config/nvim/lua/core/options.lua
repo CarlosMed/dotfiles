@@ -80,6 +80,9 @@ if vim.fn.has("nvim-0.10") == 1 then
   vim.opt.smoothscroll = true
 end
 
+vim.opt.showcmd = true
+vim.opt.showcmdloc = "statusline"
+
 -- vim.cmd("set completeopt+=noselect")
 
 --[[ UNUSED OPTIONS ]]

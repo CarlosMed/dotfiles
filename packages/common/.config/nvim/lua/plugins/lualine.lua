@@ -6,6 +6,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
+    -- enabled = false,
     init = function()
       vim.g.lualine_laststatus = vim.o.laststatus
       if vim.fn.argc(-1) > 0 then
@@ -45,6 +46,7 @@ return {
           "diagnostics",
           { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
           { "filename", path = 1 },
+          { "%S", color = { fg = "#ff9e64" } },
           -- { "buffers" },
         },
         lualine_x = {
